@@ -1,0 +1,22 @@
+rdfs instance-of:owl/Ontology uri:http://www.w3.org/1999/02/22-rdf-syntax-ns# title:"The RDF Schema vocabulary (RDFS)"
+	namespaces mappings:mappings.tree
+		rdf xmlns:http://www.w3.org/1999/02/22-rdf-syntax-ns file:rdf.tree
+		owl xmlns:http://www.w3.org/2002/07/owl file:owl.tree
+		dc xmlns:http://purl.org/dc/elements/1.1/
+	classes
+		Resource instance-of:Class d:"The class resource, everything"
+		Class instance-of:Class subclass-of:Resource d:"The class of classes"
+		Literal instance-of:Class subclass-of:Resource d:"The class of literal values, eg. textual strings and integers"
+		Container instance-of:Class subclass-of:Resource d:"The class of RDF containers"
+		ContainerMembershipProperty instance-of:Class subclass-of:rdf/Property d:"The class of container membership properties, rdf:_1, rdf:_2, ..., all of which are sub-properties of 'member'."
+		Datatype instance-of:Class subclass-of:Class d:"The class of RDF datatypes"
+	properties
+		subClassOf instance-of:rdf/Property domain:Class range:Class  d:"The subject is a subclass of a class"
+		subPropertyOf instance-of:rdf/Property domain:rdf/Property range:rdf/Property  d:"The subject is a subproperty of a property"
+		comment instance-of:rdf/Property domain:Resource range:Literal d:"A description of the subject resource"
+		label instance-of:rdf/Property domain:Resource range:Literal d:"A human-readable name for the subject"
+		domain instance-of:rdf/Property domain:rdf/Property range:Class d:"A domain of the subject property"
+		range instance-of:rdf/Property domain:rdf/Property range:Class d:"A range of the subject property"
+		seeAlso instance-of:rdf/Property domain:Resource range:Resource d:"Further information about the subject resource"
+		isDefinedBy instance-of:rdf/Property subproperty-of:seeAlso domain:Resource range:Resource d:"The defininition of the subject resource"
+		member instance-of:rdf/Property domain:Resource range:Resource d:"A member of the subject resource"

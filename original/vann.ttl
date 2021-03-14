@@ -1,0 +1,151 @@
+@prefix : <http://purl.org/vocab/vann/> .
+@prefix cc: <http://web.resource.org/cc/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@base <http://purl.org/vocab/vann/> .
+
+<http://purl.org/vocab/vann/> rdf:type owl:Ontology ;
+                               owl:versionInfo "" ;
+                               dc:contributor "Ian Davis" ;
+                               dc:title "VANN: A vocabulary for annotating vocabulary descriptions"@en ;
+                               dc:description "本文档描述了一个词汇集，通过示例和使用说明，对词汇描述进行注释。"@zh-cn ;
+                               vann:preferredNamespaceUri "http://purl.org/vocab/vann/" ;
+                               dc:date "2005-04-01" ;
+                               dc:rights "Copyright © 2005 Ian Davis" ;
+                               dcterm:hasFormat vann:vann-vocab-20050401.rdf ;
+                               dcterm:isVersionOf <http://purl.org/vocab/vann/> ;
+                               dc:type <http://purl.org/dc/dcmitype/Text> ;
+                               vann:changes vann:vann-changes-20050401.html ;
+                               dc:identifier "http://purl.org/vocab/vann/vann-vocab-20050401" ;
+                               owl:priorVersion vann:vann-vocab-20040305 ;
+                               dcterm:hasFormat vann:vann-vocab-20050401.html ;
+                               dc:title "VANN：用于标记词汇集描述信息的词汇集"@zh-cn ;
+                               vann:preferredNamespacePrefix "vann" ;
+                               dcterm:replaces vann:vann-vocab-20040305 ;
+                               cc:license <http://creativecommons.org/licenses/by/1.0/> ;
+                               dc:description "This document describes a vocabulary for annotating descriptions of vocabularies with examples and usage notes."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/format
+dc:format rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/changes
+vann:changes rdf:type owl:AnnotationProperty ;
+             rdfs:comment "A reference to a resource that describes changes between this version of a vocabulary and the previous."@en ,
+                          "引用一个资源，描述词汇的当前版本和先前版本的变更。"@zh-cn ;
+             rdfs:label "changes"@en ,
+                        "变更"@zh-cn ;
+             rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://purl.org/vocab/vann/example
+vann:example rdf:type owl:AnnotationProperty ;
+             rdfs:comment "A reference to a resource that provides an example of how this resource can be used."@en ,
+                          "引用一个资源，对如何使用资源提供例子。"@zh-cn ;
+             rdfs:label "example"@en ,
+                        "示例"@zh-cn ;
+             rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty ;
+                              rdfs:comment "The preferred namespace prefix to use when using terms from this vocabulary in an XML document."@en ,
+                                           "在一个XML文档中使用某词汇集时的首选命名空间前缀。"@zh-cn ;
+                              rdfs:label "Preferred Namespace Prefix"@en ,
+                                         "首选的命名空间前缀"@zh-cn .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty ;
+                           rdfs:comment "The preferred namespace URI to use when using terms from this vocabulary in an XML document."@en ,
+                                        "在一个XML文档中使用某词汇集时的首选命名空间URI。"@zh-cn ;
+                           rdfs:label "Preferred Namespace Uri"@en ,
+                                      "首选的命名空间URI"@zh-cn .
+
+
+###  http://purl.org/vocab/vann/usageNote
+vann:usageNote rdf:type owl:AnnotationProperty ;
+               rdfs:comment "A reference to a resource that provides information on how this resource is to be used."@en ,
+                            "引用一个资源，对如何使用资源提供信息。"@zh-cn ;
+               rdfs:label "usageNote"@en ,
+                          "使用说明"@zh-cn ;
+               rdfs:subPropertyOf rdfs:seeAlso .
+
+
+###  http://web.resource.org/cc/permits
+cc:permits rdf:type owl:AnnotationProperty .
+
+
+###  http://web.resource.org/cc/requires
+cc:requires rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+rdf:value rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/terms/IMT
+dcterm:IMT rdf:type owl:Class .
+
+
+###  http://web.resource.org/cc/License
+cc:License rdf:type owl:Class .
+
+
+###  http://web.resource.org/cc/Work
+cc:Work rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://creativecommons.org/licenses/by/1.0/
+<http://creativecommons.org/licenses/by/1.0/> rdf:type owl:NamedIndividual ,
+                                                       cc:License ;
+                                              cc:permits cc:DerivativeWorks ,
+                                                         cc:Distribution ,
+                                                         cc:Reproduction ;
+                                              cc:requires cc:Attribution ,
+                                                          cc:Notice .
+
+
+###  http://purl.org/vocab/vann/
+<http://purl.org/vocab/vann/> rdf:type owl:NamedIndividual ,
+                                       cc:Work .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+vann:vann-vocab-20050401.html dc:format [ rdf:type dcterm:IMT ;
+                                          rdf:value "text/html" ;
+                                          rdfs:label "HTML"@en ,
+                                                     "HTML"@zh-cn
+                                        ] .
+
+
+vann:vann-vocab-20050401.rdf dc:format [ rdf:type dcterm:IMT ;
+                                         rdf:value "application/rdf+xml" ;
+                                         rdfs:label "RDF"@en ,
+                                                    "RDF"@zh-cn
+                                       ] .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

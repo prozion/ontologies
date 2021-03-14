@@ -1,0 +1,189 @@
+@prefix : <http://web.resource.org/cc/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+###  http://web.resource.org/cc/license
+:license rdf:type owl:AnnotationProperty ;
+         rdfs:subPropertyOf <http://purl.org/dc/terms/license> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://web.resource.org/cc/derivativeWork
+:derivativeWork
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain :Work ;
+    rdfs:range :Work ;
+    dc:title "has a derivative work" ;
+    rdfs:seeAlso dc:source .
+
+
+###  http://web.resource.org/cc/license
+:license
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain :Work ;
+    rdfs:range :License .
+
+
+###  http://web.resource.org/cc/permits
+:permits
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain :License ;
+    rdfs:range :Permission ;
+    dc:title "permits" .
+
+
+###  http://web.resource.org/cc/prohibits
+:prohibits
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain :License ;
+    rdfs:range :Prohibition ;
+    dc:title "prohibits" .
+
+
+###  http://web.resource.org/cc/requires
+:requires
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain :License ;
+    rdfs:range :Requirement ;
+    dc:title "requires" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://web.resource.org/cc/Agent
+:Agent rdf:type owl:Class ;
+       dc:description "something (e.g. a person, corporation or computer) capable of creating things" ;
+       dc:title "agent" .
+
+
+###  http://web.resource.org/cc/License
+:License rdf:type owl:Class ;
+         dc:description "a set of requests/permissions to users of a Work, e.g. a copyright license, the public domain, information for distributors" ;
+         dc:title "license" .
+
+
+###  http://web.resource.org/cc/Permission
+:Permission rdf:type owl:Class ;
+            dc:description "an action that may or may not be allowed or desired" ;
+            dc:title "permission" .
+
+
+###  http://web.resource.org/cc/Prohibition
+:Prohibition rdf:type owl:Class ;
+             dc:description "something you may be asked not to do" ;
+             dc:title "prohibition" .
+
+
+###  http://web.resource.org/cc/Requirement
+:Requirement rdf:type owl:Class ;
+             dc:description "an action that may or may not be requested of you" ;
+             dc:title "requirement" .
+
+
+###  http://web.resource.org/cc/Work
+:Work rdf:type owl:Class ;
+      dc:description "a potentially copyrightable work" ;
+      dc:title "work" ;
+      rdfs:seeAlso <http://www.w3.org/2000/10/swap/pim/doc#Work> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://web.resource.org/cc/Attribution
+:Attribution rdf:type owl:NamedIndividual ,
+                      :Requirement ;
+             dc:description "credit be given to copyright holder and/or author" ;
+             dc:title "attribution" .
+
+
+###  http://web.resource.org/cc/CommercialUse
+:CommercialUse rdf:type owl:NamedIndividual ,
+                        :Prohibition ;
+               dc:description "exercising rights for commercial purposes" ;
+               dc:title "commercial use" .
+
+
+###  http://web.resource.org/cc/DerivativeWorks
+:DerivativeWorks rdf:type owl:NamedIndividual ,
+                          :Permission ;
+                 dc:description "creation and distribution of derivative works" ;
+                 dc:title "derivative works" .
+
+
+###  http://web.resource.org/cc/Distribution
+:Distribution rdf:type owl:NamedIndividual ,
+                       :Permission ;
+              dc:description "distribution, public display, and publicly performance" ;
+              dc:title "distribution" .
+
+
+###  http://web.resource.org/cc/Notice
+:Notice rdf:type owl:NamedIndividual ,
+                 :Requirement ;
+        dc:description "copyright and license notices be kept intact" ;
+        dc:title "copyright notices" .
+
+
+###  http://web.resource.org/cc/PublicDomain
+:PublicDomain rdf:type owl:NamedIndividual ,
+                       :License ;
+              dc:description "no copyright; everything is permitted without restriction" ;
+              dc:title "public domain" .
+
+
+###  http://web.resource.org/cc/Reproduction
+:Reproduction rdf:type owl:NamedIndividual ,
+                       :Permission ;
+              dc:description "making multiple copies" ;
+              dc:title "reproduction" .
+
+
+###  http://web.resource.org/cc/ShareAlike
+:ShareAlike rdf:type owl:NamedIndividual ,
+                     :Requirement ;
+            dc:description "derivative works be licensed under the same terms as the original work" ;
+            dc:title "share alike" .
+
+
+###  http://web.resource.org/cc/SourceCode
+:SourceCode rdf:type owl:NamedIndividual ,
+                     :Requirement ;
+            dc:description "source code (the preferred form for making modifications) must be provided for all derivative works" ;
+            dc:title "source code" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:license dc:title "has license" ;
+         rdfs:seeAlso <http://www.w3.org/2000/10/swap/pim/doc#ipr> .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

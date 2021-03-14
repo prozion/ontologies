@@ -1,0 +1,27 @@
+rdf instance-of:owl/Ontology iri:http://www.w3.org/1999/02/22-rdf-syntax-ns# title:"The RDF Concepts Vocabulary (RDF)" description:"This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts."
+	namespaces
+		rdfs xmlns:http://www.w3.org/2000/01/rdf-schema file:rdfs.tree
+		owl xmlns:http://www.w3.org/2002/07/owl file:owl.tree
+		dc xmlns:http://purl.org/dc/elements/1.1/
+	datatypes
+		HTML instance-of:rdfs/Datatype subclass-of:rdfs/Literal d:"The datatype of RDF literals storing fragments of HTML content"
+		PlainLiteral instance-of:rdfs/Datatype subclass-of:rdfs/Literal d:"The class of plain (i.e. untyped) literal values, as used in RIF and OWL 2"
+		XMLLiteral instance-of:rdfs/Datatype subclass-of:rdfs/Literal
+		langString instance-of:rdfs/Datatype subclass-of:rdfs/Literal d:"The datatype of language-tagged string values"
+	classes
+		Property instance-of:rdfs/Class subclass-of:Resource d:"The class of RDF properties"
+		Statement instance-of:rdfs/Class subclass-of:Resource d:"The class of RDF statements"
+		Bag instance-of:rdfs/Class subclass-of:rdfs/Container d:"The class of unordered containers"
+		Seq instance-of:rdfs/Class subclass-of:rdfs/Container d:"The class of ordered containers"
+		Alt instance-of:rdfs/Class subclass-of:rdfs/Container d:"The class of containers of alternatives."
+		List instance-of:rdfs/Class subclass-of:rdfs/Resource d:"The class of RDF Lists"
+	properties
+		type instance-of:Property domain:rdfs/Resource range:rdfs/Class  d:"The subject is an instance of a class"
+		value instance-of:Property domain:rdfs/Resource range:rdfs/Resource d:"Idiomatic property used for structured values"
+		subject instance-of:Property domain:Statement range:Resource
+		predicate instance-of:Property domain:Statement range:Resource ; range: why not Property?
+		object instance-of:Property domain:Statement range:Resource
+		first instance-of:Property domain:List range:rdfs/Resource d:"The first item in the subject RDF list" 
+		rest instance-of:Property domain:List range:rdfs/Resource d:"The rest of the subject RDF list after the first item"
+	instances
+		nil instance-of:List d:"The empty list, with no items in it. If the rest of a list is nil then the list has no more items in it"

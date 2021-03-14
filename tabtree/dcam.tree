@@ -1,0 +1,10 @@
+dcam a:owl/Ontology title:"DCMI Namespace for metadata terms related to the DCMI Abstract Model" modified:14.01.2014 comment:"To comment on this schema, please contact dcmifb@dublincore.org" publisher:"The Dublin Core Metadata Initiative" 
+	namespaces
+		dc xmlns:http://purl.org/dc/terms file:dcterms.tree
+		rdf xmlns:http://www.w3.org/1999/02/22-rdf-syntax-ns# file:rdf.tree
+		rdfs xmlns:http://www.w3.org/2000/01/rdf-schema# file:rdfs.tree
+		tree file:tree.tree prefix:<none>
+	classes
+		VocabularyEncoding a:rdfs/Class comment:"An enumerated set of resources"
+	properties
+		memberOf a:rdf/Property comment:"A relationship between a resource and a vocabulary encoding scheme which indicates that the resource is a member of a set"
