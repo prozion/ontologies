@@ -1,0 +1,212 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://vivoweb.org/ontology/core> a owl:Ontology ;
+    owl:imports <http://vitro.mannlib.cornell.edu/ns/vitro/0.7> .
+
+vivo:AcademicDepartment a owl:Class ;
+    rdfs:label "Academic Department"@en-US ;
+    rdfs:subClassOf vivo:Department .
+
+vivo:AcademicTerm a owl:Class ;
+    rdfs:label "Academic Term"@en-US ;
+    rdfs:subClassOf vivo:DateTimeInterval .
+
+vivo:Course a owl:Class ;
+    rdfs:label "Course"@en-US .
+
+vivo:Division a owl:Class ;
+    rdfs:label "Division"@en-US ;
+    rdfs:subClassOf foaf:Organization .
+
+vivo:FacultyAdministrativePosition a owl:Class ;
+    rdfs:label "Faculty Administrative Position"@en-US ;
+    rdfs:subClassOf vivo:Position .
+
+vivo:FacultyMember a owl:Class ;
+    rdfs:label "Faculty Member"@en-US ;
+    rdfs:subClassOf foaf:Person .
+
+vivo:FacultyPosition a owl:Class ;
+    rdfs:label "Faculty Position"@en-US ;
+    rdfs:subClassOf vivo:Position .
+
+vivo:University a owl:Class ;
+    rdfs:label "University"@en-US ;
+    rdfs:subClassOf foaf:Organization .
+
+vivo:dateTime a owl:DatatypeProperty ;
+    rdfs:label "date/time"@en-US ;
+    rdfs:domain vivo:DateTimeValue ;
+    rdfs:range xsd:dateTime .
+
+vivo:dateTimeInterval a owl:ObjectProperty ;
+    rdfs:label "date/time interval"@en-US ;
+    rdfs:range vivo:DateTimeInterval .
+
+vivo:dateTimePrecision a owl:ObjectProperty ;
+    rdfs:label "date/time precision"@en-US ;
+    rdfs:domain vivo:DateTimeValue ;
+    rdfs:range vivo:DateTimeValuePrecision .
+
+vivo:end a owl:ObjectProperty ;
+    rdfs:label "end"@en-US ;
+    rdfs:domain vivo:DateTimeInterval ;
+    rdfs:range vivo:DateTimeValue ;
+    rdfs:subPropertyOf vivo:dateTimeValue .
+
+vivo:hasCollaborator a owl:ObjectProperty ;
+    rdfs:label "collaborator"@en-US ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range foaf:Agent .
+
+vivo:linkAnchorText a owl:DatatypeProperty ;
+    rdfs:label "link anchor text"@en-US ;
+    rdfs:domain vivo:URLLink .
+
+vivo:linkURI a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "link URI"@en-US ;
+    rdfs:domain vivo:URLLink .
+
+vivo:middleName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "middle name or initial"@en-US ;
+    rdfs:domain foaf:Person .
+
+vivo:overview a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "overview"@en-US ;
+    rdfs:domain foaf:Agent .
+
+vivo:preferredTitle a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "preferred title"@en-US ;
+    rdfs:domain foaf:Person .
+
+vivo:primaryEmail a owl:DatatypeProperty ;
+    rdfs:label "primary email"@en-US .
+
+vivo:rank a owl:DatatypeProperty ;
+    rdfs:label "rank"@en-US ;
+    rdfs:range xsd:int .
+
+vivo:researchOverview a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "research overview"@en-US ;
+    rdfs:domain foaf:Person .
+
+vivo:start a owl:ObjectProperty ;
+    rdfs:label "start"@en-US ;
+    rdfs:domain vivo:DateTimeInterval ;
+    rdfs:range vivo:DateTimeValue ;
+    rdfs:subPropertyOf vivo:dateTimeValue .
+
+vivo:teachingOverview a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "teaching overview"@en-US ;
+    rdfs:domain foaf:Person .
+
+vivo:Department a owl:Class ;
+    rdfs:label "Department"@en-US ;
+    rdfs:subClassOf foaf:Organization .
+
+vivo:educationalTraining a owl:ObjectProperty ;
+    rdfs:label "education and training"@en-US ;
+    rdfs:domain foaf:Person ;
+    rdfs:range vivo:EducationalTraining ;
+    owl:inverseOf vivo:educationalTrainingOf .
+
+vivo:educationalTrainingOf a owl:ObjectProperty ;
+    rdfs:label "education or training of"@en-US ;
+    rdfs:domain vivo:EducationalTraining ;
+    rdfs:range foaf:Person ;
+    owl:inverseOf vivo:educationalTraining .
+
+vivo:hasResearchArea a owl:ObjectProperty ;
+    rdfs:label "research areas"@en-US ;
+    owl:inverseOf vivo:researchAreaOf .
+
+vivo:hasSubOrganization a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "has sub-organization"@en-US ;
+    rdfs:domain foaf:Organization ;
+    rdfs:range foaf:Organization ;
+    owl:inverseOf vivo:subOrganizationWithin .
+
+vivo:organizationForPosition a owl:ObjectProperty ;
+    rdfs:label "people"@en-US ;
+    rdfs:domain foaf:Organization ;
+    rdfs:range vivo:Position ;
+    owl:inverseOf vivo:positionInOrganization .
+
+vivo:organizationForTraining a owl:ObjectProperty ;
+    rdfs:label "alumni"@en-US ;
+    rdfs:domain foaf:Organization ;
+    rdfs:range vivo:EducationalTraining ;
+    owl:inverseOf vivo:trainingAtOrganization .
+
+vivo:personInPosition a owl:ObjectProperty ;
+    rdfs:label "positions"@en-US ;
+    rdfs:domain foaf:Person ;
+    rdfs:range vivo:Position ;
+    owl:inverseOf vivo:positionForPerson .
+
+vivo:positionForPerson a owl:ObjectProperty ;
+    rdfs:label "position for person"@en-US ;
+    rdfs:domain vivo:Position ;
+    rdfs:range foaf:Person ;
+    owl:inverseOf vivo:personInPosition .
+
+vivo:positionInOrganization a owl:ObjectProperty ;
+    rdfs:label "position in organization"@en-US ;
+    rdfs:domain vivo:Position ;
+    rdfs:range foaf:Organization ;
+    owl:inverseOf vivo:organizationForPosition .
+
+vivo:researchAreaOf a owl:ObjectProperty ;
+    rdfs:label "research area of"@en-US ;
+    owl:inverseOf vivo:hasResearchArea .
+
+vivo:subOrganizationWithin a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "organization within"@en-US ;
+    rdfs:domain foaf:Organization ;
+    rdfs:range foaf:Organization ;
+    owl:inverseOf vivo:hasSubOrganization .
+
+vivo:trainingAtOrganization a owl:ObjectProperty ;
+    rdfs:label "educational organization"@en-US ;
+    rdfs:domain vivo:EducationalTraining ;
+    rdfs:range foaf:Organization ;
+    owl:inverseOf vivo:organizationForTraining .
+
+vivo:webpage a owl:ObjectProperty ;
+    rdfs:label "webpage"@en-US ;
+    rdfs:range vivo:URLLink ;
+    owl:inverseOf vivo:webpageOf .
+
+vivo:webpageOf a owl:ObjectProperty ;
+    rdfs:label "webpageOf"@en-US ;
+    rdfs:domain vivo:URLLink ;
+    owl:inverseOf vivo:webpage .
+
+vivo:DateTimeInterval a owl:Class ;
+    rdfs:label "Date/Time Interval"@en-US .
+
+vivo:DateTimeValue a owl:Class ;
+    rdfs:label "Date/Time Value"@en-US .
+
+vivo:EducationalTraining a owl:Class ;
+    rdfs:label "Educational Training"@en-US .
+
+vivo:URLLink a owl:Class ;
+    rdfs:label "URLLink"@en-US .
+
+vivo:Position a owl:Class ;
+    rdfs:label "Position"@en-US .
