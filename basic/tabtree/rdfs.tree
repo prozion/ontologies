@@ -1,0 +1,23 @@
+rdfs a:owl/Ontology ns:http://www.w3.org/2000/01/rdf-schema# dc/title:"The RDF Schema vocabulary (RDFS)"
+	namespaces mappings:mappings.tree
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns file:rdf.tree
+		owl ns:http://www.w3.org/2002/07/owl file:owl.tree
+		dc ns:http://purl.org/dc/elements/1.1/
+		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
+	classes +a:Class +section-hierarchy-relation:subClassOf
+		Resource comment:"The class resource, everything"
+			Class comment:"The class of classes"
+				Datatype comment:"The class of RDF datatypes"
+			Literal comment:"The class of literal values, eg. textual strings and integers"
+			Container comment:"The class of RDF containers"
+		ContainerMembershipProperty subClassOf:rdf/Property comment:"The class of container membership properties, rdf:_1, rdf:_2, ..., all of which are sub-properties of 'member'."
+	properties +a:rdf/Property
+		comment domain:Resource range:Literal comment:"A description of the subject resource"
+		domain domain:rdf/Property range:Class comment:"A domain of the subject property"
+		isDefinedBy subPropertyOf:seeAlso domain:Resource range:Resource comment:"The defininition of the subject resource"
+		label domain:Resource range:Literal comment:"A human-readable name for the subject"
+		member domain:Resource range:Resource comment:"A member of the subject resource"
+		range domain:rdf/Property range:Class comment:"A range of the subject property"
+		seeAlso domain:Resource range:Resource comment:"Further information about the subject resource"
+		subClassOf domain:Class range:Class  comment:"The subject is a subclass of a class"
+		subPropertyOf domain:rdf/Property range:rdf/Property  comment:"The subject is a subproperty of a property"

@@ -1,4 +1,4 @@
-owl instance-of:owl/Ontology iri:http://www.w3.org/2002/07/owl title:"The OWL 2 Schema vocabulary (OWL 2)" is-defined-by:http://www.w3.org/TR/owl2-mapping-to-rdf/,http://www.w3.org/TR/owl2-rdf-based-semantics/,http://www.w3.org/TR/owl2-syntax/ namespace-transformation-iri:http://dev.w3.org/cvsweb/2009/owl-grddl/owx2rdf.xsl
+owl instance-of:owl/Ontology ns:http://www.w3.org/2002/07/owl title:"The OWL 2 Schema vocabulary (OWL 2)" rdfs/isDefinedBy:http://www.w3.org/TR/owl2-mapping-to-rdf/,http://www.w3.org/TR/owl2-rdf-based-semantics/,http://www.w3.org/TR/owl2-syntax/ namespace-transformation-iri:http://dev.w3.org/cvsweb/2009/owl-grddl/owx2rdf.xsl
 	namespaces mappings:mappings.tree
 		dc xmlns:http://purl.org/dc/elements/1.1/ ; file:dcterms.tree
 		grddl xmlns:http://www.w3.org/2003/g/data-view#
@@ -31,8 +31,8 @@ owl instance-of:owl/Ontology iri:http://www.w3.org/2002/07/owl title:"The OWL 2 
 		ReflexiveProperty instance-of:rdfs/Class label:"ReflexiveProperty" comment:"The class of reflexive properties" subclass-of:ObjectProperty
 		Restriction instance-of:rdfs/Class label:"Restriction" comment:"The class of property restrictions" subclass-of:Class
 		SymmetricProperty instance-of:rdfs/Class label:"SymmetricProperty" comment:"The class of symmetric properties" subclass-of:ObjectProperty
-		TransitiveProperty instance-of:rdfs/Class label:"TransitiveProperty" comment:"The class of transitive properties" subclass-of:ObjectProperty
 		Thing instance-of:rdfs/Class label:"Thing" comment:"The class of OWL individuals"
+		TransitiveProperty instance-of:rdfs/Class label:"TransitiveProperty" comment:"The class of transitive properties" subclass-of:ObjectProperty
 	properties
 		allValuesFrom instance-of:rdf/Property comment:"The property that determines the class that a universal property restriction refers to" domain:Restriction range:rdfs/Class
 		annotatedProperty instance-of:rdf/Property comment:"The property that determines the predicate of an annotated axiom or annotated annotation" domain:rdfs/Resource range:rdfs/Resource
