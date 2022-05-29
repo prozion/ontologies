@@ -1,0 +1,325 @@
+@prefix : <https://github.com/prozion/oforo/data/ontologies#> .
+@prefix o: <https://github.com/prozion/oforo/scheme#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+@base <https://github.com/prozion/oforo/data/ontologies#> .
+
+:adms
+  a o:Ontology ;
+  dc:title "Asset Description Metadata Schema (ADMS)" ;
+  o:uri <http://www.w3.org/ns/adms#> ;
+  o:ttl <http://www.w3.org/ns/adms#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/adms.ttl> ;
+  o:uses :dcterms, :skos, :foaf, :owl, :xsd, :xhv, :xml, :voaf, :vcard, :rdfs, :vann, :dcat, :rdf, :wdrs, :schema .
+
+:arg
+  a o:Ontology ;
+  o:comment "Where is its source? There is 404 on http://spinrdf.org/arg#. But in some other ttls you can see such properties from this ontology like arg:limit or arg:inputStream." ;
+  o:uri <http://spinrdf.org/arg#> .
+
+:bibo
+  a o:Ontology ;
+  dc:title "The Bibliographic Ontology" ;
+  o:uri <http://purl.org/ontology/bibo/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/bibo.ttl> ;
+  o:uses :owl, :dc, :skos, :rdfs, :xsd, :vs, :rdf, :foaf .
+
+:bio
+  a o:Ontology ;
+  dc:title "A vocabulary for biographical information" ;
+  o:uri <http://purl.org/vocab/bio/0.1/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/bio.ttl> ;
+  o:uses :cc, :dc, :ov, :st, :bio, :dct, :owl, :rdf, :xml, :xsd, :foaf, :rdfs, :skos, :vann, :label .
+
+:bko
+  a o:Ontology ;
+  o:uri <http://sbgnbricks.org/BKO/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/bko.ttl> ;
+  o:uses :owl, :xsd, :rdfs .
+
+:cc
+  a o:Ontology ;
+  o:uri <http://web.resource.org/cc/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/cc.ttl> ;
+  o:uses :dc, :owl, :rdf, :xml, :xsd, :rdfs .
+
+:daml
+  a o:Ontology ;
+  dc:description "DAML+OIL is a semantic markup language for Web resources" ;
+  o:uri <http://www.w3.org/2001/10/daml+oil#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/daml.ttl> ;
+  o:uses :rdf, :rdfs .
+
+:dc
+  a o:Ontology ;
+  dc:title "Dublin Core Metadata Element Set" ;
+  o:uri <http://purl.org/dc/elements/1.1/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/dcelements.ttl> ;
+  owl:sameAs :dcelements, :dc11 ;
+  o:uses :rdf, :owl, :skos, :dcam, :dcterms, :rdfs .
+
+:dcam
+  a o:Ontology ;
+  dc:title "Metadata terms related to the DCMI Abstract Model" ;
+  o:uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/dcam.ttl> ;
+  o:uses :rdf, :owl, :skos, :dcam, :dcterms, :rdfs .
+
+:dcat
+  a o:Ontology ;
+  dc:title "Data Catalog Vocabulary" ;
+  o:uri <http://www.w3.org/ns/dcat#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/dcat.ttl> ;
+  o:uses :dct, :dctype, :foaf, :owl, :prov, :rdf, :rdfs, :sdo, :skos, :vcard, :xsd .
+
+:dcterms
+  a o:Ontology ;
+  o:ttl <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl> ;
+  o:uri <http://purl.org/dc/terms/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/dcterms.ttl> ;
+  owl:sameAs :dct ;
+  o:uses :rdf, :owl, :skos, :dcam, :rdfs .
+
+:dctype
+  a o:Ontology ;
+  dc:title "DCMI Type Vocabulary" ;
+  o:uri <http://purl.org/dc/dcmitype/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/dctype.ttl> ;
+  o:uses :rdf, :owl, :skos, :dcam, :dcterms, :rdfs .
+
+:event
+  a o:Ontology ;
+  dc:description "This ontology deals with the notion of reified events, seen as first-class objects." ;
+  o:uri <http://purl.org/NET/c4dm/event.owl#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/evant.ttl> ;
+  o:uses :owl, :time, :rdfs, :vs, :foaf, :rdf, :geo, :dc .
+
+:foaf
+  a o:Ontology ;
+  dc:title "Friend of a Friend (FOAF) vocabulary" ;
+  o:uri <http://xmlns.com/foaf/0.1/> ;
+  o:rdf <http://xmlns.com/foaf/spec/index.rdf> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/foaf.ttl> ;
+  o:uses :rdf, :rdfs, :xsd, :xml, :owl, :vs, :wot, :dc .
+
+:frbr
+  a o:Ontology ;
+  dc:description "This vocabulary is an expression in RDF of the concepts and relations described in the IFLA report on the Functional Requirements for Bibliographic Records (FRBR)." ;
+  o:uri <http://purl.org/vocab/frbr/core#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/frbr.ttl> ;
+  o:uses :owl, :dc, :rdfs, :dcterms, :vann, :skos, :rdf, :cc, :geo, :foaf .
+
+:geo
+  a o:Ontology ;
+  dc:description "A vocabulary for representing latitude, longitude and altitude information in the WGS84 geodetic reference datum." ;
+  o:uri <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+  o:other-ttl <https://raw.githubusercontent.com/prozion/ontologies/master/ttl/geo.ttl> ;
+  o:uses :rdf, :rdfs .
+
+:grddl
+  a o:Schema ;
+  o:uri <http://www.w3.org/2003/g/data-view#> .
+
+:label
+  a o:Ontology ;
+  o:uri <http://purl.org/net/vocab/2004/03/label#> .
+
+:owl
+  a o:Ontology ;
+  dc:title "The OWL 2 Schema vocabulary (OWL 2)" ;
+  o:uri <http://www.w3.org/2002/07/owl#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/owl.ttl> ;
+  o:uses :dc, :grddl, :rdf, :rdfs, :xml, :xsd .
+
+:ov
+  a o:Ontology ;
+  dc:title "Open Vocabulary" ;
+  o:uri <http://open.vocab.org/terms/> ;
+  o:source <https://vocab.org/open/terms.rdf> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/ov.ttl> ;
+  o:uses :owl, :dc11, :sdo, :rdfs, :skos, :xsd, :label, :foaf, :void, :schema, :rdf, :geo, :sioc, :bibo, :vcard, :qb, :dc .
+
+:prov
+  a o:Ontology ;
+  dc:description "The namespace is intended for use with the PROV family of documents that support the interchange of provenance on the web" ;
+  o:uri <http://www.w3.org/ns/prov#> ;
+  o:ttl <https://www.w3.org/ns/prov.ttl> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/prov.ttl> ;
+  o:uses :rdf, :rdfs, :owl, :xsd .
+
+:qb
+  a o:Ontology ;
+  owl:sameAs :cube ;
+  o:uri <http://purl.org/linked-data/cube#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/qb.ttl> ;
+  o:uses :rdf, :rdfs, :owl, :xsd, :skos, :foaf, :scv, :void, :dcterms .
+
+:rdf
+  a o:Ontology ;
+  dc:title "The RDF Concepts Vocabulary (RDF)" ;
+  o:uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/rdf.ttl> ;
+  o:uses :rdfs, :owl, :dc .
+
+:rdfa
+  a o:Ontology ;
+  o:uri <http://www.w3.org/ns/rdfa#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/rdfa.ttl> ;
+  o:uses :dcterms, :foaf, :rdf, :owl, :rdfs, :xsd .
+
+:rdfs
+  a o:Ontology ;
+  dc:title "The RDF Schema vocabulary (RDFS)" ;
+  o:uri <http://www.w3.org/2000/01/rdf-schema#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/rdfs.ttl> ;
+  o:uses :rdf, :owl, :dc .
+
+:relationship
+  a o:Ontology ;
+  o:uri <https://www.perceive.net/schemas/relationship/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/relationship.ttl> ;
+  o:uses :dc, :owl, :rdf, :wot, :xml .
+
+:schema
+  a o:Ontology ;
+  o:uri <https://schema.org/> ;
+  o:ttl <https://schema.org/version/latest/schemaorg-current-https.ttl> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/schema.ttl> ;
+  owl:sameAs :sdo ;
+  o:uses :rdf, :rdfs, :skos, :dcterms, :owl .
+
+:scovo
+  a o:Ontology ;
+  dc:title "The Statistical Core Vocabulary (SCOVO)" ;
+  owl:sameAs :scv ;
+  o:uri <http://purl.org/NET/scovo#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/scovo.ttl> ;
+  o:replaced-by :qb ;
+  o:uses :adms, :dc, :dcterms, :foaf, :owl, :rdf, :rdfs, :vann, :xml, :xsd .
+
+:sioc
+  a o:Ontology ;
+  dc:description "SIOC (Semantically-Interlinked Online Communities) is an ontology for describing the information in online communities." ;
+  o:uri <http://rdfs.org/sioc/ns#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/sioc.ttl> ;
+  o:uses :xsd, :owl .
+
+:skos
+  a o:Ontology ;
+  dc:title "SKOS Vocabulary" ;
+  o:uri <http://www.w3.org/2004/02/skos/core#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/skos.ttl> ;
+  o:uses :dct, :owl, :rdf, :xml, :xsd, :rdfs .
+
+:sp
+  a o:Ontology ;
+  dc:title "SPIN SPARQL Syntax" ;
+  owl:sameAs :spinsp ;
+  o:uri <http://spinrdf.org/sp#> ;
+  o:rdf <http://spinrdf.org/sp> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/sp.ttl> ;
+  o:uses :owl, :rdfs, :rdf, :xsd .
+
+:spin
+  a o:Ontology ;
+  dc:title "SPARQL Inferencing Notation" ;
+  o:uri <http://spinrdf.org/spin#> ;
+  o:rdf <http://spinrdf.org/spin> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/spin.ttl> ;
+  o:uses :owl, :rdfs, :rdf, :xsd, :spl, :sp .
+
+:spl
+  a o:Ontology ;
+  dc:title "SPIN Standard Library" ;
+  o:uri <http://spinrdf.org/spl#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/spl.ttl> ;
+  o:uses :owl, :rdfs, :spin, :rdf, :xsd, :sp, :arg .
+
+:time
+  a o:Ontology ;
+  o:uri <http://www.w3.org/2006/time#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/time.ttl> ;
+  o:uses :dct, :owl, :rdf, :rdfs, :skos, :xsd .
+
+:timeline
+  a o:Ontology ;
+  dc:description "Extends owl-time ontology (http://www.w3.org/2006/time#) with support for several timelines, acting as a backbone to adress time interval/instants" ;
+  o:uri <http://purl.org/NET/c4dm/timeline.owl#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/timeline.ttl> ;
+  o:extends :time ;
+  o:uses :rdf, :vs, :daml, :dc, :dcterms, :owl, :foaf, :rdfs, :xsd, :time.
+
+:vann
+  a o:Ontology ;
+  dc:title "A vocabulary for annotating vocabulary descriptions" ;
+  o:uri <http://purl.org/vocab/vann/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/vann.ttl> ;
+  o:uses :cc, :dc, :bio, :owl, :rdf, :xml, :xsd, :rdfs, :dcterms .
+
+:vcard
+  a o:Ontology ;
+  o:uri <http://www.w3.org/2006/vcard/ns#> ;
+  o:ttl <http://www.w3.org/2006/vcard/ns#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/vcard.ttl> ;
+  o:uses :owl, :rdf, :rdfs, :xml, :xsd .
+
+:vivo
+  a o:Ontology ;
+  dc:description "The VIVO ontology represents researchers in the context of their experience, outputs, interests, accomplishments, and associated institutions" ;
+  o:uri <http://vivoweb.org/ontology/core#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/vivo.ttl> ;
+  o:uses :foaf, :owl, :rdf, :rdfs, :xml, :xsd .
+
+:voaf
+  a o:Ontology ;
+  dc:title "Vocabulary of a Friend" ;
+  dc:description "VOAF can be used to define networks of vocabularies" ;
+  o:uri <http://purl.org/vocommons/voaf#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/voaf.ttl> ;
+  o:uses :rdf, :dc, :foaf, :owl, :rdfs, :vs, :vann, :cc, :spin, :spinsp, :frbr .
+
+:void
+  a o:Ontology ;
+  dc:description "A set of RDF triples that are published, maintained or aggregated by a single provider." ;
+  o:uri <http://rdfs.org/ns/void#> ;
+  o:ttl <http://vocab.deri.ie/void.ttl> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/void.ttl> ;
+  o:uses :rdf, :owl, :adms, :dct, :xsd, :vann, :foaf, :dc, :rdfs, :sdo .
+
+:vs
+  a o:Ontology ;
+  dc:title "SemWeb Vocab Status ontology" ;
+  o:uri <http://www.w3.org/2003/06/sw-vocab-status/ns#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/vs.ttl> ;
+  owl:sameAs :sw_vocab_status, :st ;
+  o:uses :dc, :owl, :rdf, :xml, :xsd, :foaf, :rdfs, :vann .
+
+:wdrs
+  a o:Ontology ;
+  dc:title "Protocol for Web Description Resources (POWDER): POWDER-S Vocabulary (WDRS)" ;
+  o:uri <http://www.w3.org/2007/05/powder-s#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/wdrs.ttl> ;
+  o:uses :owl, :rdfs, :dc, :vann, :rdf, :xsd .
+
+:wot
+  a o:Ontology ;
+  dc:title "Web Of Trust vocabulary" ;
+  o:uri <http://xmlns.com/wot/0.1/> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/wot.ttl> ;
+  o:uses :dc, :vs, :owl, :rdf, :xml, :xsd, :rdfs .
+
+:xhv
+  a o:Ontology ;
+  dc:description "A vocabulary collection utilized by XHTML Family modules and document types" ;
+  o:uri <http://www.w3.org/1999/xhtml/vocab#> ;
+  o:other-ttl <https://github.com/prozion/ontologies/blob/master/ttl/xhv.ttl> ;
+  o:uses :rdf, :rdfa, :rdfs .
+
+:xml
+  a o:Schema ;
+  o:uri <http://www.w3.org/XML/1998/namespace> .
+
+:xsd
+  a o:Schema ;
+  o:uri <http://www.w3.org/2001/XMLSchema#> .

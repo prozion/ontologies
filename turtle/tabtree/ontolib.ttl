@@ -1,0 +1,62 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix : <<https://purl.org/tabtree/ontolib#> .
+
+:
+  a owl:Ontology ;
+  dc:description "This ontology describes items in the ontology repository" .
+
+:Prefix a rdf:Class .
+
+:Ontology
+  rdfs:subClassOf :Prefix ;
+  rdfs:subClassOf owl:Ontology .
+
+:Schema rdfs:subClassOf :Prefix .
+
+:source
+  a rdfs:Property ;
+  dc:description "A link to a file with some source code of ontology. It can be either in XML format, Turtle, Functional or Manchester syntax" ;
+  rdfs:domain :Prefix .
+
+:ttl
+  rdfs:subPropertyOf :source ;
+  dc:description "A link to a file with ontology code in the Turtle format" .
+
+:rdf
+  rdfs:subPropertyOf :source ;
+  dc:description "A link to a file with ontology code in RDF/XML format" .
+
+:other-ttl
+  rdfs:subPropertyOf :source ;
+  dc:description "A link to a file with ontology code somewhere online in a Turtle format" .
+
+:uri
+  a rdfs:Property ;
+  dc:description "URI namespace, usually used in @prefix for this ontology" ;
+  rdfs:domain :Prefix .
+
+:uses
+  a rdfs:Property ;
+  dc:description "Other ontologies that are being used or supposed to be used by the described ontology" ;
+  rdfs:domain :Prefix ;
+  rdfs:range :Prefix .
+
+:extends
+  a rdfs:Property ;
+  rdfs:domain :Prefix ;
+  rdfs:range :Prefix .
+
+:replaced-by
+  a rdfs:Property ;
+  dc:description "In the case described ontology is obsolete and another ontology is recommended for use" ;
+  rdfs:domain :Prefix ;
+  rdfs:range :Prefix .
+
+:comment
+  a rdfs:Property ;
+  dc:description "Comments and questions, functionally similar to nearby comments written through #" ;
+  rdfs:domain :Prefix ;
+  rdfs:range rdf:langString .

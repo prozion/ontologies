@@ -1,7 +1,8 @@
-foaf a:owl/Ontology title:"Friend of a Friend (FOAF) vocabulary" description:"The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language."
+foaf a:owl/Ontology title:"Friend of a Friend (FOAF) vocabulary" description:"The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language." ns:http://xmlns.com/foaf/0.1/
 	namespaces
-		owl xmlns:http://www.w3.org/2002/07/owl#
+		rdf xmlns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs xmlns:http://www.w3.org/2000/01/rdf-schema#
+		owl xmlns:http://www.w3.org/2002/07/owl#
 	definitions
 		classes
 			Agent a:rdf/Class comment:"An agent (eg. person, group, software or physical artifact)."

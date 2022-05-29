@@ -1,0 +1,32 @@
+tabtree-time a:owl/Ontology dc/title:"Ontology for contact information" ns:https://purl.org/tabtree/contacts#
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		dc ns:http://purl.org/dc/elements/1.1/
+		foaf ns:http://xmlns.com/foaf/0.1/
+		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
+		tf ns:https://purl.org/tabtree/facts#
+	classes +a:owl/Class +section-hierarchy-relation:subclass-of
+	properties +a:rdf/Property +section-hierarchy-relation:subproperty-of
+		contact
+			phone subproperty-of:foaf/phone domain:owl/Thing range:String url:https://www.ietf.org/rfc/rfc2806.txt d:"a phone number"
+			url domain:owl/Thing range:tf/Url d:"a general link to some web page"
+				email d:"email address"
+					gmail regexp:`.+?@gmail\.com` d:"useful distinct email for some applications as it usually correlates with google account and provides an easy registration in the system"
+				sn d:"link to a page in some social network"
+					fb d:"link to Facebook page"
+					insta d:"link to Instagram page"
+					linkedin d:"link to LinkedIn page"
+					ok d:"link to Odnoklassniki page"
+					strava d:"link to Strava page"
+					vk d:"link to VKontakte page"
+				messenger d:"id in some messenger app"
+					skype
+					tg d:"Telegram id"
+					whatsapp
+					viber
+			org-contact d:"contacts for organization"
+				org-url subproperty-of:url d:"link to organization's official web page"
+				org-vk d:"link to organization's page in VKontakte"
+				org-fb d:"link to organization's page in Facebook"
