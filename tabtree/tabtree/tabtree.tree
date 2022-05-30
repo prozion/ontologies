@@ -1,5 +1,5 @@
 ; all classes and properties in this file should be defined either in the included ontologies namespaces, or in this file itself.
-tabtree a:Ontology dc/title:"Онтология древовидного языка описания онтологий 'tabtree'"@ru,"Ontology for tree-like ontology description language 'tabtree'"@en ns:https://purl.org/tabtree/core#
+tabtree a:Ontology dc/title:"Онтология Tabtree - древовидного языка описания онтологий, описанная в нем же самом"@ru,"An RDF/OWL scheme for Tabtree, it describes most common tabtree predicates used in various knowledge bases"@en ns:https://purl.org/tabtree/core#
 	namespaces
 		rdf ns:https://www.w3.org/1999/02/22-rdf-syntax-ns
 		rdfs ns:https://www.w3.org/2000/01/rdf-schema 
@@ -8,10 +8,10 @@ tabtree a:Ontology dc/title:"Онтология древовидного язы�
 		skos ns:http://www.w3.org/2004/02/skos/core#
 	; Classes and Properties used in schema (but they can be also used in the data files)
 	classes +a:owl/Class +section-hierarchy-relation:subclass-of
-		Class eq:owl/Class
+		Class eq-class:owl/Class
 		Namespace
-		Ontology eq:owl/Ontology
-		Property eq:rdf/Property
+		Ontology eq-class:owl/Ontology
+		Property eq-class:rdf/Property
 		TabtreeObjectParameter d:"Parameters of the objects in .tree file, writen in the form <parameter>:<value>"
 		TabtreeRecord d:"Any line, that represents either section or an object in the .tree file"
 			TabtreeSection d:"Describes a section in the .tree file"
@@ -28,14 +28,14 @@ tabtree a:Ontology dc/title:"Онтология древовидного язы�
 			Integer regexp:`(-|+)?\d+([Ee]\d+)?`
 			IntegerPositive subclass-of:Integer regexp:`\d+([Ee]\d+)?`
 			IntegerMaybe one-of:Integer,"*"
-			IRI eq:URI
+			IRI eq-class:URI
 			List d:"Enumeration of some elements, including instances by their ids"
 				ParametersList d:"Enumeration of object parameters" element-class:TabtreeObjectParameter
 				RangeExpression element-class:owl/Class,LispCode
-			Path eq:String
+			Path eq-class:String
 			Regexp regexp:``.*?``
-			String regexp:`".*?"(ru|en)?` ; eq:xsd/string
-			URI eq:Url
+			String regexp:`".*?"(ru|en)?` ; eq-class:xsd/string
+			URI eq-class:Url
 			Url regexp:`.+?\.(ru|su|рф|com|net|org|biz|info|cc|ws|in|tv|mobi|club|name|me|pro|no|fi|ee|lv|lt|by|ua|tk|kz|jp|us|se|de|fr|uk|gov|edu|mil)`
 		complex-datatypes
 			LanguageId one-of:"ttl","tree","rdfxml","owlxml" d:"Format to encode an ontology"
@@ -44,37 +44,38 @@ tabtree a:Ontology dc/title:"Онтология древовидного язы�
 			Explanation d:"A statement that explains RDF triplets as expressions"
 			ExpandableProperty subroperty-of:rdf/Property d:"Denotes property that requires some extra script actions in the process of translation from Baelas to Turtle OWL"
 	properties +a:rdf/Property +section-hierarchy-relation:subproperty-of
-		a eq:rdf/type
+		a eq-property:rdf/type
 		abbr domain:rdfs/Resource range:Id,String
-		alt-id eq:eq domain:rdfs/Resource range:Id d:"alternative id(s)"
+		alt-id eq-property:eq domain:rdfs/Resource range:Id d:"alternative id(s)"
 			id-ru d:"Id in Russian"
 			id-en d:"Id in English"
 			short-id
-		cardinality eq:owl/cardinality
-		comment eq:rdfs/comment
-		d eq:description,dc/description domain:rdfs/Resource range:String d:"description string"
+		cardinality eq-property:owl/cardinality
+		comment eq-property:rdfs/comment
+		d eq-property:description subclass-of:dc/description domain:rdfs/Resource range:String d:"description string"
 		deabbr domain:rdfs/Resource range:String d:"Abbreviation meaning"
 		; eq a:rdf/Property type:functional domain:rdfs/Resource range:rdfs/Resource d:"establishes equivalence between considered item and some rdf/rdfs/owl element"
-		def eq:skos/definition
-		domain eq:rdfs/domain
+		def eq-property:skos/definition
+		domain eq-property:rdfs/domain
 		element-class domain:List range:List d:"Defines types of elements in the list"
-		eq owl/EquivalentClass:owl/EquivalentClass
-		eq-class domain:Class range:owl/Restriction
+		eq owl/equivalentProperty:owl/sameAs
+		eq-class owl/equivalentProperty:owl/equivalentClass
+		eq-property owl/equivalentProperty:owl/equivalentProperty
 		example subproperty-of:skos/example domain:owl/Class range:String d:"Example of possible values for properties or classes, comma separates several instances of value, not several examples"
 		file domain:Namespace range:Path d:"A file with schema description"
-		instance-of eq:a
-		intersection-of eq:owl/intersectionOf
-		inverse-of eq:owl/inverseOf
-		max-cardinality eq:owl/maxCardinality
-		min-cardinality eq:owl/minCardinality
+		instance-of eq-property:a
+		intersection-of eq-property:owl/intersectionOf
+		inverse-of eq-property:owl/inverseOf
+		max-cardinality eq-property:owl/maxCardinality
+		min-cardinality eq-property:owl/minCardinality
 		name subproperty-of:rdfs/label
 		no-prefix domain:Namespace range:URI
 		ns domain:`(union-of Namespace Ontology)` range:URI
-		one-of eq:owl/oneOf
+		one-of eq-property:owl/oneOf
 		part-of subproperty-of:dc/isPartOf domain:rdfs/Resource range:rdfs/Resource
 		prefix domain:Namespace range:String,`(one-of <none>)` d:"Applied when desired prefix is different from that in id"
 		question subproperty-of:skos/note domain:rdfs/Resource range:String d:"questions and discussion about the subject"
-		range eq:rdfs/range
+		range eq-property:rdfs/range
 		regexp domain:rdfs/Datatype range:Regexp d:"A regular expression that defines a range of possible symbols and their combinations for scalar datatypes"
 		ref domain:rdfs/Resource range:Boolean d:"Shows that the entity is described somewhere else"
 		ref-url domain:Explanation range:Url d:"The page or post online, that describes or explains the entity or relations of entities in the RDF expression"
@@ -84,15 +85,16 @@ tabtree a:Ontology dc/title:"Онтология древовидного язы�
 		; section-default-class domain:TabtreeSection range:owl/Class d:"Defines default classes of the items in subsequent hierarchy" example:"For section 'classes' it would be '+section-class:owl/Class', for section 'properties' it would be '+section-class:rdf/Property'"
 		section-hierarchy-relation domain:TabtreeSection range:rdf/Property d:"Defines relations between elements in subsequent hierarchy that follows current section in .tree file. Relation goes from one element (subject) to another element (object), that is always exactly one level up in hierarchy"
 		section-hierarchy-inverse-relation domain:TabtreeSection range:rdf/Property d:"Defines relations between elements in subsequent hierarchy bottom up"
-		see-also eq:rdfs/seeAlso
+		see-also eq-property:rdfs/seeAlso
 		spec domain:Namespace range:Path
-		subclass-of eq:is-a eq:rdfs/subClassOf
-		subproperty-of eq:rdfs/subPropertyOf
+		subclass-of eq-property:is-a eq-property:rdfs/subClassOf
+		subproperty-of eq-property:rdfs/subPropertyOf
 		syn a:ExpandableProperty d:"Expands to owl/EquivalentClass and creates new line with synonimed class through rdf/type"
+		title eq-property:dc/title
 		to-authentic-format domain:rdf/Property range:LispCode d:"Specifies the translation from the used property value to the format required by external standards and taxonomies, like SBO, GO etc."
 		translate-to domain:TabtreeSection range:LanguageId d:"A directive, that specifies to what format the current ontology code should be translated to"
 		types-combination a:owl/FunctionalProperty domain:rdfs/Datatype range:LispCode
-		union-of eq:owl/unionOf
+		union-of eq-property:owl/unionOf
 	instances
 		; sections
 		classes a:TabtreeSection
