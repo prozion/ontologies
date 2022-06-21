@@ -6,11 +6,11 @@ ontolib a:owl/Ontology title:"Ontology and data for ontologies repository" ns:ht
 		dc ns:http://purl.org/dc/terms/ 
 		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
 		ttc ns:https://purl.org/tabtree/contacts# 
-	classes +a:owl/Class +section-hierarchy-relation:subclass-of
+	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
 		Prefix
 			Ontology subclass-of:owl/Ontology
 			Schema
-	properties +a:rdf/Property +section-hierarchy-relation:subproperty-of
+	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
 		extends domain:Prefix range:Prefix
 		ttl-url subproperty-of:ttc/url
 			other-ttl-url
@@ -31,8 +31,8 @@ ontolib a:owl/Ontology title:"Ontology and data for ontologies repository" ns:ht
 		cc uri:http://web.resource.org/cc/ ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/cc.ttl uses:owl,xsd,xml,rdfs,rdf,dc
 		daml uri:http://www.w3.org/2001/10/daml+oil ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/daml.ttl uses:rdfs,rdf dc/description:"DAML+OIL is a semantic markup language for Web resources"
 		dc title:"Dublin Core Metadata Element Set" uri:http://purl.org/dc/elements/1.1/ ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/dcelements.ttl uses:dcterms,skos,owl,rdfs,rdf,dcam eq:dcelements,dc11
-		dcam title:"Metadata terms related to the DCMI Abstract Model" uri:http://www.w3.org/1999/02/22-rdf-syntax-ns ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/dcam.ttl uses:dcterms,skos,owl,rdfs,rdf,dcam
-		dcat title:"Data Catalog Vocabulary" uri:http://www.w3.org/ns/dcat ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/dcat.ttl uses:skos,foaf,owl,xsd,vcard,rdfs,rdf,dct,dctype,prov,sdo
+		dcam title:"Metadata terms related to the DCMI Abstract Model" uri:http://www.w3.org/1999/02/22-rdf-syntax-ns# ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/dcam.ttl uses:dcterms,skos,owl,rdfs,rdf,dcam
+		dcat title:"Data Catalog Vocabulary" uri:http://www.w3.org/ns/dcat# ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/dcat.ttl uses:skos,foaf,owl,xsd,vcard,rdfs,rdf,dct,dctype,prov,sdo
 		dcterms uri:http://purl.org/dc/terms/ ttl-url:https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/dcterms.ttl uses:skos,owl,rdfs,rdf,dcam eq:dct
 		dctype title:"DCMI Type Vocabulary" uri:http://purl.org/dc/dcmitype/ ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/dctype.ttl uses:dcterms,skos,owl,rdfs,rdf,dcam
 		event uri:http://purl.org/NET/c4dm/event.owl ontolib-ttl-url:https://github.com/prozion/ontologies/blob/master/ttl/evant.ttl uses:foaf,owl,rdfs,rdf,dc,vs,time,geo dc/description:"This ontology deals with the notion of reified events, seen as first-class objects."

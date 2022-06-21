@@ -629,7 +629,7 @@ urban_system issued:"November 29, 2016" a:owl/Ontology title:"Urban System Ontol
 		wheelchairBoarding a:owl/DatatypeProperty
 		worksAt a:owl/ObjectProperty subproperty-of:OrgOntologyProperty
 		worksFor a:owl/ObjectProperty subproperty-of:SchemaOrgProperty
-	instances
+	individuals
 		AccessArrangedViaAgency a:owl/NamedIndividual
 		AccessArrangedViaDriver a:owl/NamedIndividual
 		AccessAsScheduled a:owl/NamedIndividual

@@ -7,9 +7,9 @@ tabtree-time a:owl/Ontology dc/title:"Ontology for contact information" ns:https
 		foaf ns:http://xmlns.com/foaf/0.1/
 		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
 		tf ns:https://purl.org/tabtree/facts#
-	classes +a:owl/Class +section-hierarchy-relation:subclass-of
+	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
 		Url
-	properties +a:rdf/Property +section-hierarchy-relation:subproperty-of
+	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
 		contact
 			phone subproperty-of:foaf/phone domain:owl/Thing range:String url:https://www.ietf.org/rfc/rfc2806.txt d:"a phone number"
 			url domain:owl/Thing range:Url d:"a general link to some web page"

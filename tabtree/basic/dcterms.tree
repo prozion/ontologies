@@ -1,4 +1,4 @@
-dcterms a:owl/Ontology title:"DCMI Namespace for metadata terms in the http://purl.org/dc/terms/ namespace" comment:"To comment on this schema, please contact dcmifb@dublincore.org." publisher:"The Dublin Core Metadata Initiative" modified:2008-01-14
+dcterms a:owl/Ontology title:"DCMI Namespace for metadata terms in the http://purl.org/dc/terms/ namespace" comment:"To comment on this schema, please contact dcmifb@dublincore.org." publisher:"The Dublin Core Metadata Initiative" modified:2008-01-14 ns:http://purl.org/dc/terms/
 	namespaces
 		dcam xmlns:http://purl.org/dc/dcam/
 		dcels xmlns:http://purl.org/dc/elements/1.1/

@@ -174,4 +174,3 @@
     rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
     rdfs:label "Type"@en ;
     skos:note "A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document \"DCMI Metadata Terms\" (http://dublincore.org/documents/dcmi-terms/) for an explanation."@en .
-

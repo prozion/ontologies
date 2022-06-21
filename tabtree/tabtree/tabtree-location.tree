@@ -6,8 +6,8 @@ tabtree-time a:owl/Ontology dc/title:"Ontology for location information" ns:http
 		dc ns:http://purl.org/dc/elements/1.1/
 		geo ns:http://www.w3.org/2003/01/geo/wgs84_pos#
 		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
-	classes +a:owl/Class +section-hierarchy-relation:subclass-of
-	properties +a:rdf/Property +section-hierarchy-relation:subproperty-of
+	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
+	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
 		location
 			place domain:owl/Thing range:String d:"the name of the place, city, village"
 			hq domain:owl/Thing range:String d:"headquarters location of some company or organization"
