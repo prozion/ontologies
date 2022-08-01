@@ -1,0 +1,21 @@
+sbgn-af a:owl/Ontology dc/title:"The ontology corresponds to SBGN Activity Flow diagrams standard" rdfs/seeAlso:https://co.mbine.org/specifications/sbgn.af.level-1.version-1.2 ns:https://purl.org/sbgn/af#
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		dc ns:http://purl.org/dc/elements/1.1/
+		biopax ns:http://www.biopax.org/release/biopax-level3.owl#
+		tabtree ns:https://purl.org/tabtree/core#
+	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
+		ActivityNode
+			BiologicalActivity
+			Phenotype
+		Compartment
+	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
+		modulates eq-property:mod
+			influences rdfs/comment:"corresponds to 'Unknown influence' modulation arc" eq-property:inf
+				positevelyInfluences eq-property:pos
+				negativelyInfluences eq-property:neg
+			neccessarilyStimulates eq-property:nsti
+		isPositevelyInfluencedBy owl/inverseOf:positevelyInfluences eq-property:ispos
+		isNegatevelyInfluencedBy owl/inverseOf:negatevelyInfluences eq-property:isneg

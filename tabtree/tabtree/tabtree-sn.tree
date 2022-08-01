@@ -1,4 +1,4 @@
-tabtree-time a:owl/Ontology dc/title:"Ontology that describes various social network aspects" ns:https://purl.org/tabtree/sn#
+tabtree-sn a:owl/Ontology dc/title:"Ontology that describes various social network aspects" ns:https://purl.org/tabtree/sn#
 	namespaces
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#

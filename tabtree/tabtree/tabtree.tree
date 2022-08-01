@@ -73,8 +73,7 @@ tabtree a:Ontology dc/title:"Онтология Tabtree - древовидног
 		question subproperty-of:skos/note domain:rdfs/Resource range:String d:"questions and discussion about the subject"
 		range eq-property:rdfs/range
 		regexp domain:rdfs/Datatype range:Regexp d:"A regular expression that defines a range of possible symbols and their combinations for scalar datatypes"
-		ref domain:rdfs/Resource range:Boolean d:"Shows that the entity is described somewhere else"
-		ref-url domain:Explanation range:Url d:"The page or post online, that describes or explains the entity or relations of entities in the RDF expression"
+		ref domain:rdfs/Resource range:Ref d:"Points to the external source where the entity is described or detalized"
 		rel domain:rdfs/Resource range:rdfs/Resource d:"Establishes relation between Object and Subject"
 		section-root-class domain:TabtreeSection range:owl/Class d:"Defines the common superclass for all the classes declared in the section"
 		section-hierarchy-relation domain:TabtreeSection range:rdf/Property d:"Defines relations between elements in subsequent hierarchy that follows current section in .tree file. Relation goes from one element (subject) to another element (object), that is always exactly one level up in hierarchy"

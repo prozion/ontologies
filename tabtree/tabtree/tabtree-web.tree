@@ -1,0 +1,14 @@
+tabtree-web a:owl/Ontology dc/title:"Ontology for links and other web data" ns:https://purl.org/tabtree/web#
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		dc ns:http://purl.org/dc/elements/1.1/
+		foaf ns:http://xmlns.com/foaf/0.1/
+		tabtree ns:https://purl.org/tabtree/core#
+	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
+		Url
+		WebResource
+	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
+		contact
+			url domain:WebResource range:Url d:"a general link to some web page"

@@ -3,7 +3,6 @@ rdfs a:owl/Ontology ns:http://www.w3.org/2000/01/rdf-schema# dc/title:"The RDF S
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns file:rdf.tree
 		owl ns:http://www.w3.org/2002/07/owl file:owl.tree
 		dc ns:http://purl.org/dc/elements/1.1/
-		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
 	classes +a:Class +section-hierarchy-relation:subClassOf
 		Resource comment:"The class resource, everything"
 			Class comment:"The class of classes"

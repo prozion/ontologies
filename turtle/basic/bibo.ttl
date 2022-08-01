@@ -1581,4 +1581,3 @@ bibo:fgiasson
   rdfs:label "unpublished"@en ;
   ns0:term_status "stable" ;
   rdfs:comment "Unpublished document"@en .
-

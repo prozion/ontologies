@@ -1,0 +1,57 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://protege.stanford.edu/plugins/owl/protege> a owl:Ontology .
+<http://protege.stanford.edu/plugins/owl/protege#abstract> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#allowedParent> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#defaultLanguage> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#excludedTest> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#probeClass> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#readOnly> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#subclassesDisjoint> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#todoProperty> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#todoPrefix> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#usedLanguage> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#base> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#fractionDigits> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#length> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#minExclusive> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#minInclusive> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#maxExclusive> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#maxInclusive> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#minLength> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#maxLength> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#pattern> a owl:AnnotationProperty .
+<http://www.owl-ontologies.com/2005/08/07/xsp.owl#totalDigits> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#DIRECTED-BINARY-RELATION> a owl:Class .
+<http://protege.stanford.edu/plugins/owl/protege#FROM>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://protege.stanford.edu/plugins/owl/protege#DIRECTED-BINARY-RELATION> .
+
+<http://protege.stanford.edu/plugins/owl/protege#TO>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://protege.stanford.edu/plugins/owl/protege#DIRECTED-BINARY-RELATION> .
+
+<http://protege.stanford.edu/plugins/owl/protege#SLOT-CONSTRAINTS> a owl:AnnotationProperty .
+<http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT> a owl:Class .
+<http://protege.stanford.edu/plugins/owl/protege#PAL-STATEMENT>
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  rdfs:domain <http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT> .
+
+<http://protege.stanford.edu/plugins/owl/protege#PAL-DESCRIPTION>
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  rdfs:domain <http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT> .
+
+<http://protege.stanford.edu/plugins/owl/protege#PAL-NAME>
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  rdfs:domain <http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT> .
+
+<http://protege.stanford.edu/plugins/owl/protege#PAL-RANGE>
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  rdfs:domain <http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT> .
+

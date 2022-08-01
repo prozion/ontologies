@@ -5,22 +5,22 @@ tabtree-time a:owl/Ontology dc/title:"Ontology for time-related concepts" ns:htt
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
 		; time ns:http://www.w3.org/2006/time#
-		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
+		tabtree ns:https://purl.org/tabtree/core#
 	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
-		Duration subclass-of:rdfs/Literal regexp:`\d+[SHMdwmy]` ; subclass-of:time/TemporalDuration 
+		Duration subclass-of:rdfs/Literal tabtree/regexp:`\d+[SHMdwmy]` ; subclass-of:time/TemporalDuration 
 		TimelineObject subclass-of:owl/Thing
 		Time subclass-of:rdfs/Literal ; subclass-of:time/TimeInterval
 			TimePoint
-				Date regexp:`\d{2}\.\d{2}\.\d{4}|<current>`
-				DateTime regexp:`\d{2}\.\d{2}\.\d{4}-\d{2}:\d{2}(:\d{2})?`
+				Date tabtree/regexp:`\d{2}\.\d{2}\.\d{4}|<current>`
+				DateTime tabtree/regexp:`\d{2}\.\d{2}\.\d{4}-\d{2}:\d{2}(:\d{2})?`
 			TimeInterval
 				DateInterval ; subclass-of:time/ProperInterval types-combination:`TimePoint-TimePoint`
 				StandardTimeInterval
 					Hour
 					Day
 					Month
-					Year regexp:`\d{4}|<current>` subclass-of:DateInterval
-				RegularTimeInterval rdfs/comment:"Time interval within every standard time interval"
+					Year tabtree/regexp:`\d{4}|<current>` subclass-of:DateInterval
+				RegularTimeInterval d:"Time interval within every standard time interval"
 	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
 		date
 			year domain:TimelineObject range:Year

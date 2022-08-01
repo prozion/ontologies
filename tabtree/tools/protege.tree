@@ -1,0 +1,38 @@
+protege a:owl/Ontology ns:http://protege.stanford.edu/plugins/owl/protege#
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		xsd ns:http://www.w3.org/2001/XMLSchema#
+	classes +section-hierarchy-inverse-relation:subclass-of +a:owl/Class
+		DIRECTED-BINARY-RELATION rdf/type:owl/Class
+		PAL-CONSTRAINT rdf/type:owl/Class
+	properties +section-hierarchy-inverse-relation:subproperty-of +a:rdfs/Property
+		abstract rdf/type:owl/AnnotationProperty
+		allowedParent rdf/type:owl/AnnotationProperty
+		base rdf/type:owl/AnnotationProperty
+		defaultLanguage rdf/type:owl/AnnotationProperty
+		excludedTest rdf/type:owl/AnnotationProperty
+		fractionDigits rdf/type:owl/AnnotationProperty
+		FROM rdfs/domain:DIRECTED-BINARY-RELATION rdf/type:owl/ObjectProperty
+		length rdf/type:owl/AnnotationProperty
+		maxExclusive rdf/type:owl/AnnotationProperty
+		maxInclusive rdf/type:owl/AnnotationProperty
+		maxLength rdf/type:owl/AnnotationProperty
+		minExclusive rdf/type:owl/AnnotationProperty
+		minInclusive rdf/type:owl/AnnotationProperty
+		minLength rdf/type:owl/AnnotationProperty
+		PAL-DESCRIPTION rdfs/domain:PAL-CONSTRAINT rdfs/range:xsd/string rdf/type:owl/DatatypeProperty
+		PAL-NAME rdfs/domain:PAL-CONSTRAINT rdfs/range:xsd/string rdf/type:owl/DatatypeProperty
+		PAL-RANGE rdfs/domain:PAL-CONSTRAINT rdfs/range:xsd/string rdf/type:owl/DatatypeProperty
+		PAL-STATEMENT rdfs/domain:PAL-CONSTRAINT rdfs/range:xsd/string rdf/type:owl/DatatypeProperty
+		pattern rdf/type:owl/AnnotationProperty
+		probeClass rdf/type:owl/AnnotationProperty
+		readOnly rdf/type:owl/AnnotationProperty
+		SLOT-CONSTRAINTS rdf/type:owl/AnnotationProperty
+		subclassesDisjoint rdf/type:owl/AnnotationProperty
+		TO rdfs/domain:DIRECTED-BINARY-RELATION rdf/type:owl/ObjectProperty
+		todoPrefix rdf/type:owl/AnnotationProperty
+		todoProperty rdf/type:owl/AnnotationProperty
+		totalDigits rdf/type:owl/AnnotationProperty
+		usedLanguage rdf/type:owl/AnnotationProperty

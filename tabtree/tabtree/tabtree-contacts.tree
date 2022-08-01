@@ -1,18 +1,17 @@
-tabtree-time a:owl/Ontology dc/title:"Ontology for contact information" ns:https://purl.org/tabtree/contacts#
+tabtree-contacts a:owl/Ontology dc/title:"Ontology for contact information" ns:https://purl.org/tabtree/contacts#
 	namespaces
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
 		foaf ns:http://xmlns.com/foaf/0.1/
-		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
-		tf ns:https://purl.org/tabtree/facts#
+		tabtree ns:https://purl.org/tabtree/core#
+		web ns:https://purl.org/tabtree/web#
 	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
-		Url
 	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
 		contact
 			phone subproperty-of:foaf/phone domain:owl/Thing range:String url:https://www.ietf.org/rfc/rfc2806.txt d:"a phone number"
-			url domain:owl/Thing range:Url d:"a general link to some web page"
+			url domain:owl/Thing range:web/Url d:"a general link to some web page"
 				email d:"email address"
 					gmail regexp:`.+?@gmail\.com` d:"useful distinct email for some applications as it usually correlates with google account and provides an easy registration in the system"
 				sn d:"link to a page in some social network"

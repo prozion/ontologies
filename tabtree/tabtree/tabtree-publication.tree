@@ -1,0 +1,21 @@
+tabtree-publication a:owl/Ontology dc/title:"Ontology for scientific publication" ns:https://purl.org/tabtree/publication#
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		dc ns:http://purl.org/dc/elements/1.1/
+		foaf ns:http://xmlns.com/foaf/0.1/
+		bibo ns:"http://purl.org/ontology/bibo/"
+		tabtree ns:https://purl.org/tabtree/core#
+	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
+		Publication
+			Article
+		Journal
+		JournalIssue
+		Author subclass-of:foaf/Person
+	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
+		author domain:Publication range:Author
+		doi subproperty-of:bibo/doi
+		issue domain:Publication range:JournalIssue
+		issuedBy a:owl/ObjectProperty owl/inverseOf:dc/publisher
+		journal domain:Publication range:Journal
