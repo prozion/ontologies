@@ -1,0 +1,41 @@
+sbgn-pd a:owl/Ontology dc/title:"The ontology corresponds to SBGN Process Description diagrams standard" ns:https://purl.org/sbgn/pd#
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		dc ns:http://purl.org/dc/elements/1.1/
+		biopax ns:http://www.biopax.org/release/biopax-level3.owl#
+		tabtree ns:https://purl.org/tabtree/core#
+	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
+		Macromolecule
+		Complex
+		SimpleChemical
+		UnspecifiedEntity
+		NucleicAcidFeature
+		PerturbingAgent
+		Process
+			UncertainProcess
+		SourceSink
+			Source
+			Sink
+		Phenotype
+		Submap
+		Compartment
+	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
+		substrate
+		product
+		association
+		dissociation
+		logicalAssociation
+			and
+			or
+			not
+		tag 
+		modulation
+		stimulation
+		catalysis
+		catalyzedBy owl/inverseOf:catalysis
+		inhibition
+		inhibitedBy owl/inverseOf:inhibition
+		necessaryStimulation
+		
