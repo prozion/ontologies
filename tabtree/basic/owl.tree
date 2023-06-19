@@ -1,10 +1,10 @@
-owl instance-of:owl/Ontology ns:http://www.w3.org/2002/07/owl title:"The OWL 2 Schema vocabulary (OWL 2)" rdfs/isDefinedBy:http://www.w3.org/TR/owl2-mapping-to-rdf/,http://www.w3.org/TR/owl2-rdf-based-semantics/,http://www.w3.org/TR/owl2-syntax/ namespace-transformation-iri:http://dev.w3.org/cvsweb/2009/owl-grddl/owx2rdf.xsl
+owl a:owl/Ontology ns:http://www.w3.org/2002/07/owl title:"The OWL 2 Schema vocabulary (OWL 2)" rdfs/isDefinedBy:http://www.w3.org/TR/owl2-mapping-to-rdf/,http://www.w3.org/TR/owl2-rdf-based-semantics/,http://www.w3.org/TR/owl2-syntax/ namespace-transformation-iri:http://dev.w3.org/cvsweb/2009/owl-grddl/owx2rdf.xsl
 	namespaces mappings:mappings.tree
-		dc xmlns:http://purl.org/dc/elements/1.1/ ; file:dcterms.tree
-		grddl xmlns:http://www.w3.org/2003/g/data-view#
-		rdf xmlns:http://www.w3.org/1999/02/22-rdf-syntax-ns# file:rdf.tree
-		rdfs xmlns:http://www.w3.org/2000/01/rdf-schema# file:rdfs.tree
-		xsd xmlns:http://www.w3.org/2001/XMLSchema#
+		dc ns:http://purl.org/dc/elements/1.1/ ; file:dcterms.tree
+		grddl ns:http://www.w3.org/2003/g/data-view#
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns# file:rdf.tree
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema# file:rdfs.tree
+		xsd ns:http://www.w3.org/2001/XMLSchema#
 	; definitions is-defined-by:http://www.w3.org/2002/07/owl#
 	classes
 		AllDifferent instance-of:rdfs/Class label:"AllDifferent" comment:"The class of collections of pairwise different individuals" subclass-of:rdfs/Resource

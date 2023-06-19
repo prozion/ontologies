@@ -1,4 +1,4 @@
-rdf instance-of:owl/Ontology iri:http://www.w3.org/1999/02/22-rdf-syntax-ns# title:"The RDF Concepts Vocabulary (RDF)" description:"This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts."
+rdf a:owl/Ontology iri:http://www.w3.org/1999/02/22-rdf-syntax-ns# title:"The RDF Concepts Vocabulary (RDF)" description:"This is the RDF Schema for the RDF vocabulary terms in the RDF Namespace, defined in RDF 1.1 Concepts."
 	namespaces
 		rdfs xmlns:http://www.w3.org/2000/01/rdf-schema file:rdfs.tree
 		owl xmlns:http://www.w3.org/2002/07/owl file:owl.tree

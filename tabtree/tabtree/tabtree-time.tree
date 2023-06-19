@@ -5,26 +5,32 @@ tabtree-time a:owl/Ontology dc/title:"Ontology for time-related concepts" ns:htt
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
 		; time ns:http://www.w3.org/2006/time#
+		ta ns:https://purl.org/tabtree/abstract#
 		tabtree ns:https://purl.org/tabtree/core#
-	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
+	classes +a:owl/Class +hi-inv-rel:subclass-of
 		Duration subclass-of:rdfs/Literal tabtree/regexp:`\d+[SHMdwmy]` ; subclass-of:time/TemporalDuration 
+		Event subclass-of:ta/Datable
 		TimelineObject subclass-of:owl/Thing
 		Time subclass-of:rdfs/Literal ; subclass-of:time/TimeInterval
 			TimePoint
 				Date tabtree/regexp:`\d{2}\.\d{2}\.\d{4}|<current>`
+					Year
 				DateTime tabtree/regexp:`\d{2}\.\d{2}\.\d{4}-\d{2}:\d{2}(:\d{2})?`
-			TimeInterval
+			TimeInterval subclass-of:rdfs/Literal
 				DateInterval ; subclass-of:time/ProperInterval types-combination:`TimePoint-TimePoint`
+				NamedTimeInterval
+				RegularTimeInterval d:"Time interval within every standard time interval"
 				StandardTimeInterval
 					Hour
 					Day
 					Month
 					Year tabtree/regexp:`\d{4}|<current>` subclass-of:DateInterval
-				RegularTimeInterval d:"Time interval within every standard time interval"
-	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
+	properties +a:rdf/Property +hi-inv-rel:subproperty-of
 		date
-			year domain:TimelineObject range:Year
-			start domain:TimelineObject range:Time d:"start date or time or datetime for some event"
-			end domain:TimelineObject range:Time d:"end date or time or datetime for some event"
+			year domain:ta/Datable range:Year
+			start domain:TimelineObject range:TimePoint d:"start date or time or datetime for some event"
+				created
+			end domain:TimelineObject range:TimePoint d:"end date or time or datetime for some event"
+				closed
 		dur domain:TimelineObject range:Duration,TimeInterval d:"duration of some event"
-		time-interval domain:TimelineObject range:Time
+		time-interval domain:TimelineObject range:TimeInterval

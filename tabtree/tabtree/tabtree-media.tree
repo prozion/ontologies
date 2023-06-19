@@ -1,0 +1,79 @@
+tabtree-media a:owl/Ontology dc/title:"Ontology for media outlets and publications, including the scientific ones" ns:https://purl.org/tabtree/media#
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		dc ns:http://purl.org/dc/elements/1.1/
+		foaf ns:http://xmlns.com/foaf/0.1/
+		bibo ns:http://purl.org/ontology/bibo/
+		tabtree ns:https://purl.org/tabtree/core#
+		ta ns:https://purl.org/tabtree/abstract#
+		time ns:https://purl.org/tabtree/time#
+	classes +a:owl/Class +hi-inv-rel:subclass-of
+		Author subclass-of:foaf/Person
+		Media subclas-of:owl/Thing
+			Blog subclass-of:Url
+				Dzen
+				Livejournal
+				Facebook
+				Instagram
+				Twitter
+				Vkontakte
+				Youtube
+			Journal
+				PrintedJournal
+			Newspaper
+				PrintedNewspaper
+			SNResource
+				PersonalAccount
+				SNEvent
+				SNGroup
+					VKGroup
+						VKPublic
+					Channel
+						IRCChannel
+						TelegramChannel
+						YoutubeChannel
+					Chat
+						DiscordChat
+						MessengerChat
+							TelegramChat
+						SlackChat
+		CreativePiece subclass-of:ta/Attributable,ta/Product
+			Text
+				Publication
+					Book
+					Article
+						JournalIssue
+						NewspaperIssue
+			Graphics
+				DataVisualization
+					Chart
+					Map
+				Picture
+					Drawing
+		IRI subclass-of:rdfs/Literal
+			URI
+				Url
+	properties +a:rdf/Property +hi-inv-rel:subproperty-of
+		author domain:CreativePiece range:Author
+		book domain:Person range:Book
+		doi subproperty-of:bibo/doi
+		issue domain:Publication range:JournalIssue
+		issuedBy a:owl/ObjectProperty owl/inverseOf:dc/publisher
+		journal domain:Publication range:Journalr
+		sn_norm subproperty-of:ta/norm domain:SNResource range:rdfs/Literal d:"a norm for social networks"
+			users-number
+				u domain:SNGroup d:"number of users in the group"
+					vk-u domain:VKGroup
+					yt-u domain:YoutubeChannel
+				p domain:SNEvent d:"number of participants in the event"
+				f domain:PersonalAccount d:"number of friends"
+		title subproperty-of:dc/title domain:CreativePiece range:rdfs/Literal
+		url domain:ta/Linkable range:Url
+			vk range:Vkontakte
+				vk-old
+			yt range:Youtube
+		written subproperty-of:time/created domain:Text
+
+		

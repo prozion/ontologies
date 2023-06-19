@@ -6,11 +6,11 @@ ontolib a:owl/Ontology title:"Ontology and data for ontologies repository" ns:ht
 		dc ns:http://purl.org/dc/terms/ 
 		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
 		ttc ns:https://purl.org/tabtree/contacts# 
-	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
+	classes +a:owl/Class +hi-inv-rel:subclass-of
 		Prefix
 			Ontology subclass-of:owl/Ontology
 			Schema
-	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
+	properties +a:rdf/Property +hi-inv-rel:subproperty-of
 		extends domain:Prefix range:Prefix
 		file
 			rdf

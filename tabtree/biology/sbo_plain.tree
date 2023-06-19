@@ -3,7 +3,7 @@ SBO a:owl/Ontology rdfs/label:"Generated: 03:11:2021 07:00" rdfs/comment:"System
 		owl ns:http://www.w3.org/2002/07/owl#
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
-	classes +section-hierarchy-inverse-relation:subclass-of +a:owl/Class
+	classes +hi-inv-rel:subclass-of +a:owl/Class
 		SBO_0000000 a:owl/Class rdfs/label:"systems biology representation" rdfs/comment:"Representation of an entity used in a systems biology knowledge reconstruction, such as a model, pathway, network."
 		SBO_0000001 a:owl/Class subclass-of:SBO_0000064 rdfs/label:"rate law" rdfs/comment:"mathematical description that relates quantities of reactants to the reaction velocity."
 		SBO_0000002 a:owl/Class subclass-of:SBO_0000545 rdfs/label:"quantitative systems description parameter" rdfs/comment:"A numerical value that defines certain characteristics of systems or system functions. It may be part of a calculation, but its value is not determined by the form of the equation itself, and may be arbitrarily assigned."
@@ -698,5 +698,5 @@ SBO a:owl/Ontology rdfs/label:"Generated: 03:11:2021 07:00" rdfs/comment:"System
 		SBO_0000692 a:owl/Class subclass-of:SBO_0000694 rdfs/label:"resource balance framework" rdfs/comment:"Modeling approach where the flow of resources (flux) through a network can be calculated. This approach will generally produce a set of solutions (solution space), which may be reduced using objective functions and constraints on individual fluxes."
 		SBO_0000693 a:owl/Class subclass-of:SBO_0000004 rdfs/label:"constraint-based framework" rdfs/comment:"Modelling approach which captures bounds on the possible behavior of a system, which may be further reduced using an objective function."
 		SBO_0000694 a:owl/Class subclass-of:SBO_0000693 rdfs/label:"Modelling approach for finding the optimal state of a system.","optimization framework"
-	properties +section-hierarchy-inverse-relation:subproperty-of +a:rdfs/Property
+	properties +hi-inv-rel:subproperty-of +a:rdfs/Property
 		part_of a:owl/ObjectProperty,owl/TransitiveProperty rdfs/label:"part of"

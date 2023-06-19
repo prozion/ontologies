@@ -6,7 +6,7 @@ sbgn-pd a:owl/Ontology dc/title:"The ontology corresponds to SBGN Process Descri
 		dc ns:http://purl.org/dc/elements/1.1/
 		biopax ns:http://www.biopax.org/release/biopax-level3.owl#
 		tabtree ns:https://purl.org/tabtree/core#
-	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
+	classes +a:owl/Class +hi-inv-rel:subclass-of
 		Macromolecule
 		Complex
 		SimpleChemical
@@ -21,7 +21,7 @@ sbgn-pd a:owl/Ontology dc/title:"The ontology corresponds to SBGN Process Descri
 		Phenotype
 		Submap
 		Compartment
-	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
+	properties +a:rdf/Property +hi-inv-rel:subproperty-of
 		substrate
 		product
 		association

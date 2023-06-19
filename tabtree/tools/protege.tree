@@ -4,10 +4,10 @@ protege a:owl/Ontology ns:http://protege.stanford.edu/plugins/owl/protege#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		owl ns:http://www.w3.org/2002/07/owl#
 		xsd ns:http://www.w3.org/2001/XMLSchema#
-	classes +section-hierarchy-inverse-relation:subclass-of +a:owl/Class
+	classes +hi-inv-rel:subclass-of +a:owl/Class
 		DIRECTED-BINARY-RELATION rdf/type:owl/Class
 		PAL-CONSTRAINT rdf/type:owl/Class
-	properties +section-hierarchy-inverse-relation:subproperty-of +a:rdfs/Property
+	properties +hi-inv-rel:subproperty-of +a:rdfs/Property
 		abstract rdf/type:owl/AnnotationProperty
 		allowedParent rdf/type:owl/AnnotationProperty
 		base rdf/type:owl/AnnotationProperty

@@ -1,0 +1,17 @@
+tabtree-source a:owl/Ontology dc/title:"All about sources" ns:https://purl.org/tabtree/source#
+	namespaces
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		owl ns:http://www.w3.org/2002/07/owl#
+		dc ns:http://purl.org/dc/elements/1.1/
+		foaf ns:http://xmlns.com/foaf/0.1/
+		tabtree ns:https://purl.org/tabtree/core#
+		time ns:https://purl.org/tabtree/time#
+		loc ns:https://purl.org/tabtree/location#
+		media ns:https://purl.org/tabtree/media#
+	classes +a:owl/Class +hi-inv-rel:subclass-of
+		Source
+			WebpageSource
+				UrlSource subclass-of:media/Url
+	properties +a:rdf/Property +hi-inv-rel:subproperty-of
+		source domain:rdf/Statement range:Source

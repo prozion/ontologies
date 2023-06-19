@@ -3,7 +3,7 @@ SBO a:owl/Ontology rdfs/label:"Generated: 03:11:2021 07:00" rdfs/comment:"System
 		owl ns:http://www.w3.org/2002/07/owl#
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
-	classes +section-hierarchy-inverse-relation:subclass-of +a:owl/Class
+	classes +hi-inv-rel:subclass-of +a:owl/Class
 		SBO_0000000 a:owl/Class rdfs/label:"systems biology representation" rdfs/comment:"Representation of an entity used in a systems biology knowledge reconstruction, such as a model, pathway, network."
 			SBO_0000003 a:owl/Class subclass-of:SBO_0000000 rdfs/label:"participant role" rdfs/comment:"The function of a physical or conceptual entity, that is its role, in the execution of an event or process."
 				SBO_0000010 a:owl/Class subclass-of:SBO_0000003 rdfs/label:reactant rdfs/comment:"Substance consumed by a chemical reaction. Reactants react with each other to form the products of a chemical reaction. In a chemical equation the Reactants are the elements or compounds on the left hand side of the reaction equation. A reactant can be consumed and produced by the same reaction, its global quantity remaining unchanged."
@@ -4103,5 +4103,5 @@ SBO a:owl/Ontology rdfs/label:"Generated: 03:11:2021 07:00" rdfs/comment:"System
 		SBO_0000694 a:owl/Class subclass-of:SBO_0000693 rdfs/label:"Modelling approach for finding the optimal state of a system.","optimization framework"
 			SBO_0000624 a:owl/Class subclass-of:SBO_0000694 rdfs/label:"flux balance framework" rdfs/comment:"Modelling approach, typically used for metabolic models, where the flow of metabolites (flux) through a network can be calculated. This approach will generally produce a set of solutions (solution space), which may be reduced using objective functions and constraints on individual fluxes."
 			SBO_0000692 a:owl/Class subclass-of:SBO_0000694 rdfs/label:"resource balance framework" rdfs/comment:"Modeling approach where the flow of resources (flux) through a network can be calculated. This approach will generally produce a set of solutions (solution space), which may be reduced using objective functions and constraints on individual fluxes."
-	properties +section-hierarchy-inverse-relation:subproperty-of +a:rdfs/Property
+	properties +hi-inv-rel:subproperty-of +a:rdfs/Property
 		part_of a:owl/ObjectProperty,owl/TransitiveProperty rdfs/label:"part of"

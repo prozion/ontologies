@@ -1,9 +1,9 @@
-skos instance-of:owl/Ontology title:"SKOS Vocabulary" creator:Alistair_Miles,Sean_Bechhofer contributor:Dave_Beckett,Nikki_Rogers d:"An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies" ns:http://www.w3.org/2004/02/skos/core#
+skos a:owl/Ontology title:"SKOS Vocabulary" creator:Alistair_Miles,Sean_Bechhofer contributor:Dave_Beckett,Nikki_Rogers d:"An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies" ns:http://www.w3.org/2004/02/skos/core#
 	namespaces mappings:mappings.tree
-		owl xmlns:http://www.w3.org/2002/07/owl# spec:owl.tree
-		rdf xmlns:http://www.w3.org/1999/02/22-rdf-syntax-ns# spec:rdf.tree
-		rdfs xmlns:http://www.w3.org/2000/01/rdf-schema# spec:rdfs.tree
-		dcterms xmlns:http://purl.org/dc/terms/ spec:dcterms.tree
+		owl ns:http://www.w3.org/2002/07/owl# spec:owl.tree
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns# spec:rdf.tree
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema# spec:rdfs.tree
+		dcterms ns:http://purl.org/dc/terms/ spec:dcterms.tree
 		tree file:tree.tree
 	definitions is-defined-by:http://www.w3.org/2004/02/skos/core
 		aliases

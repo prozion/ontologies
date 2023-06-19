@@ -1,4 +1,4 @@
-tabtree-person a:owl/Ontology dc/title:"Ontology for contact information" ns:https://purl.org/tabtree/person#
+tabtree-person a:owl/Ontology dc/title:"Ways to describe a person" ns:https://purl.org/tabtree/person#
 	namespaces
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
@@ -6,28 +6,32 @@ tabtree-person a:owl/Ontology dc/title:"Ontology for contact information" ns:htt
 		dc ns:http://purl.org/dc/elements/1.1/
 		foaf ns:http://xmlns.com/foaf/0.1/
 		tabtree ns:https://purl.org/tabtree/core#
-	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
-		Person subclass-of:foaf/Person
-		Url
-	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
-		contact domain:foaf/Agent
-			phone subproperty-of:foaf/phone range:String url:https://www.ietf.org/rfc/rfc2806.txt d:"a phone number"
-			url range:Url d:"a general link to some web page"
-				email d:"email address"
-					gmail regexp:`.+?@gmail\.com` d:"useful distinct email for some applications as it usually correlates with google account and provides an easy registration in the system"
-				sn d:"link to a page in some social network"
-					fb d:"link to Facebook page"
-					insta d:"link to Instagram page"
-					linkedin d:"link to LinkedIn page"
-					ok d:"link to Odnoklassniki page"
-					strava d:"link to Strava page"
-					vk d:"link to VKontakte page"
-				messenger d:"id in some messenger app"
-					skype
-					tg d:"Telegram id"
-					whatsapp
-					viber
-			org-contact d:"contacts for organization"
-				org-url subproperty-of:url d:"link to organization's official web page"
-				org-vk d:"link to organization's page in VKontakte"
-				org-fb d:"link to organization's page in Facebook"
+		ta ns:https://purl.org/tabtree/abstract#
+		time ns:https://purl.org/tabtree/time#
+		loc ns:https://purl.org/tabtree/location#
+		org ns:https://purl.org/tabtree/organization#
+	classes +a:owl/Class +hi-inv-rel:subclass-of
+		Homepage subclass-of:tabtree/Url
+			WorkplaceHomepage
+			HobbyHomepage
+		Person subclass-of:foaf/Person,ta/Human,ta/Contactable,ta/Nameable
+		Profession
+	properties +a:rdf/Property +hi-inv-rel:subproperty-of
+		alma-mater domain:Person range:org/University
+		degree domain:Person range:org/University
+			ba 
+			ma
+		homepage subproperty-of:tabtree/url domain:Person range:Homepage
+			foaf/workplaceHomepage range:WorkplaceHomepage
+		hometown domain:Person range:loc/City
+		member domain:`Person,org/Organization` range:org/Organization
+		name subclass-of:tabtree/name domain:Person range:rdfs/Literal
+			previous-name
+			real-name
+			real-surname
+		nick domain:Person range:rdfs/Literal
+		place subproperty-of:loc/place
+			bplace domain:Person range:time/Date d:"birthplace"
+			dplace domain:Person range:time/Date d:"place of death"
+		profession domain:Person range:Profession
+

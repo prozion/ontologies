@@ -5,9 +5,20 @@ tabtree-location a:owl/Ontology dc/title:"Ontology for location information" ns:
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
 		geo ns:http://www.w3.org/2003/01/geo/wgs84_pos#
-		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
-	classes +a:owl/Class +section-hierarchy-inverse-relation:subclass-of
-	properties +a:rdf/Property +section-hierarchy-inverse-relation:subproperty-of
-		location
-			place domain:owl/Thing range:String d:"the name of the place, city, village"
-			hq domain:owl/Thing range:String d:"headquarters location of some company or organization"
+		tabtree ns:https://purl.org/tabtree/core#
+		ta ns:https://purl.org/tabtree/abstract#
+	classes +a:owl/Class +hi-inv-rel:subclass-of
+		GeographicalUnit
+			Country
+			Place
+				City
+				Village
+				SkiResort
+	properties +a:rdf/Property +hi-inv-rel:subproperty-of
+		lat domain:ta/Locatable range:rdfs/Literal d:"Latitude"
+		location domain:ta/Locatable
+			country range:Country
+			place range:String d:"the name of the place, city, village"
+				city range:City
+				town eq-property:city
+		lon domain:ta/Locatable range:rdfs/Literal d:"Longitude"
