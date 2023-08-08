@@ -1,19 +1,17 @@
 ; all classes and properties in this file should be defined either in the included ontologies namespaces, or in this file itself.
-tabtree a:Ontology dc/title:"Онтология Tabtree - древовидного языка описания онтологий, описанная в нем же самом"@ru,"An RDF/OWL scheme for Tabtree, it describes most common tabtree predicates used in various knowledge bases"@en ns:https://purl.org/tabtree/core#
+tabtree a:owl/Ontology dc/title:"Онтология Tabtree - древовидного языка описания онтологий, описанная в нем же самом"@ru,"An RDF/OWL scheme for Tabtree, it describes most common tabtree predicates used in various knowledge bases"@en ns:https://purl.org/prozion/tabtree/core#
 	namespaces
+		xsd ns:http://www.w3.org/2001/XMLSchema#
 		rdf ns:https://www.w3.org/1999/02/22-rdf-syntax-ns
 		rdfs ns:https://www.w3.org/2000/01/rdf-schema 
 		owl ns:https://www.w3.org/2002/07/owl 
 		dc ns:http://purl.org/dc/terms/ 
 		skos ns:http://www.w3.org/2004/02/skos/core#
-		ta ns:https://purl.org/tabtree/abstract#
+		ta ns:https://purl.org/prozion/tabtree/abstract#
 	; Classes and Properties used in schema (but they can be also used in the data files)
 	classes +a:owl/Class +hi-inv-rel:subclass-of
-		Class eq-class:owl/Class
 		Namespace
-		Ontology eq-class:owl/Ontology
 		OntologyPart
-		Property eq-class:rdf/Property
 		skip d:"For rubrics in the code"
 		TabtreeObjectParameter d:"Parameters of the objects in .tree file, writen in the form <parameter>:<value>"
 		TabtreeRecord d:"Any line, that represents either section or an object in the .tree file"
@@ -31,15 +29,16 @@ tabtree a:Ontology dc/title:"Онтология Tabtree - древовидног
 				Filepath subclass-of:rdfs/Literal
 				Dirpath subclass-of:rdfs/Literal
 				Url regexp:`.+?\.(ru|su|рф|com|net|org|biz|info|cc|ws|in|tv|mobi|club|name|me|pro|no|fi|ee|lv|lt|by|ua|tk|kz|jp|us|se|de|fr|uk|gov|edu|mil)`
-			Float regexp:`-?\d+\.\d*([Ee]-?\d+)`
+			Float regexp:`-?\d+\.\d*([Ee]-?\d+)` subclass-of:rdfs/Literal
 			Id regexp:`[A-Za-zА-Яа-я\-_/0-9]+` subclass-of:rdfs/Literal
 			IntegerInterval subclass-of:rdfs/Literal
 				Integer regexp:`(-|+)?\d+([Ee]\d+)?` d:"single value is a subclass of interval, it is interpreted as the left and rigth border of interval are the same"
-					IntegerPositive regexp:`\d+([Ee]\d+)?`
+					IntegerPositive regexp:`\d+([Ee]\d+)?` subclass-of:rdfs/Literal
 			IntegerMaybe one-of:Integer,"*"
 			List d:"Enumeration of some elements, including instances by their ids"
 				ParametersList d:"Enumeration of object parameters" element-class:TabtreeObjectParameter
 				RangeExpression element-class:owl/Class,LispCode
+			Number subclass-of:`Float,Integer`
 			Regexp regexp:``.*?``
 			String regexp:`".*?"(ru|en)?` ; eq-class:xsd/string
 		complex-datatype
@@ -49,20 +48,9 @@ tabtree a:Ontology dc/title:"Онтология Tabtree - древовидног
 			Explanation d:"A statement that explains RDF triplets as expressions"
 			ExpandableProperty subroperty-of:rdf/Property d:"Denotes property that requires some extra script actions in the process of translation from Baelas to Turtle OWL"
 	properties +a:rdf/Property +hi-inv-rel:subproperty-of
-		a eq-property:rdf/type
 		abbr domain:rdfs/Resource range:`Id,String`
-		alt eq-property:eq domain:rdfs/Resource range:Id d:"alternative id(s)"
-			short-id
-		comment eq-property:rdfs/comment
-		d eq-property:description subclass-of:dc/description domain:rdfs/Resource range:String d:"description string"
 		deabbr domain:ta/Abbreviation range:String d:"Abbreviation meaning"
-		; eq a:rdf/Property type:functional domain:rdfs/Resource range:rdfs/Resource d:"establishes equivalence between considered item and some rdf/rdfs/owl element"
-		def eq-property:skos/definition
-		domain eq-property:rdfs/domain
 		element-class domain:List range:List d:"Defines types of elements in the list"
-		eq owl/equivalentProperty:owl/sameAs
-		eq-class owl/equivalentProperty:owl/equivalentClass
-		eq-property owl/equivalentProperty:owl/equivalentProperty
 		example subproperty-of:skos/example domain:owl/Class range:String d:"Example of possible values for properties or classes, comma separates several instances of value, not several examples"
 		file domain:Namespace range:Filepath d:"A file with schema description"
 		no-prefix domain:Namespace range:URI
@@ -70,7 +58,6 @@ tabtree a:Ontology dc/title:"Онтология Tabtree - древовидног
 		one-of eq-property:owl/oneOf
 		prefix domain:Namespace range:String,`(one-of <none>)` d:"Applied when desired prefix is different from that in id"
 		question subproperty-of:skos/note domain:rdfs/Resource range:String d:"questions and discussion about the subject"
-		range eq-property:rdfs/range
 		regexp domain:rdfs/Datatype range:Regexp d:"A regular expression that defines a range of possible symbols and their combinations for scalar datatypes"
 		rem eq-property:skos/editorialNote
 		ref domain:rdfs/Resource range:Ref d:"Points to the external source where the entity is described or detalized"
@@ -79,10 +66,9 @@ tabtree a:Ontology dc/title:"Онтология Tabtree - древовидног
 		section-hierarchy-relation domain:TabtreeSection range:rdf/Property d:"Defines relations between elements in subsequent hierarchy that follows current section in .tree file. Relation goes from one element (subject) to another element (object), that is always exactly one level up in hierarchy"
 		section-hierarchy-inverse-relation domain:TabtreeSection range:rdf/Property d:"Defines relations between elements in subsequent hierarchy bottom up"
 		see-also eq-property:rdfs/seeAlso
+		short-id subproperty-of:owl/sameAs
 		spec domain:Namespace range:Filepath
 		status range:rdfs/Literal
-		subclass-of eq-property:is-a eq-property:rdfs/subClassOf
-		subproperty-of eq-property:rdfs/subPropertyOf
 		syntax domain:OntologyPart 
 		to-authentic-format domain:rdf/Property range:LispCode d:"Specifies the translation from the used property value to the format required by external standards and taxonomies, like SBO, GO etc."
 		translate-to domain:TabtreeSection range:LanguageId d:"A directive, that specifies to what format the current ontology code should be translated to"
@@ -91,14 +77,30 @@ tabtree a:Ontology dc/title:"Онтология Tabtree - древовидног
 		unit range:UnitOfMeasurement
 	individuals
 		; sections
-		classes a:TabtreeSection
-		complex-datatypes a:TabtreeSection
-		datatypes a:TabtreeSection
-		imports a:TabtreeSection
-		individuals a:TabtreeSection
-		namespaces a:TabtreeSection
-		ontology a:TabtreeSection
-		ontology-part a:TabtreeSection
-		primitive-datatypes a:TabtreeSection
-		properties a:TabtreeSection
-		restrictions a:TabtreeSection
+		; classes a:TabtreeSection
+		; complex-datatypes a:TabtreeSection
+		; datatypes a:TabtreeSection
+		; imports a:TabtreeSection
+		; individuals a:TabtreeSection
+		; namespaces a:TabtreeSection
+		; ontology a:TabtreeSection
+		; ontology-part a:TabtreeSection
+		; primitive-datatypes a:TabtreeSection
+		; properties a:TabtreeSection
+		; restrictions a:TabtreeSection
+	; aliases
+	; 	a eq-property:rdf/type
+	; 	instance-of eq-property:rdf/type
+	; 	subclass-of eq-property:rdfs/subClassOf
+	; 	subproperty-of eq-property:rdfs/subPropertyOf
+	; 	alt eq-property:owl/sameAs
+	; 	eq eq-property:owl/sameAs
+	; 	eq-class eq-property:owl/equivalentClass
+	; 	eq-property eq-property:owl/equivalentProperty
+	; 	domain eq-property:rdfs/domain
+	; 	range eq-property:rdfs/range
+	; 	d eq-property:rdfs/comment
+	; 	def eq-property:skos/definition
+	; 	deabbr eq-property:rdfs/label
+	; 	name eq-property:rdfs/label
+	; 	disjoint-with eq-property:owl/disjointWith

@@ -1,12 +1,12 @@
-tabtree-location a:owl/Ontology dc/title:"Ontology for location information" ns:https://purl.org/tabtree/location#
+tabtree-location a:owl/Ontology dc/title:"Ontology for location information" ns:https://purl.org/prozion/tabtree/location#
 	namespaces
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
 		geo ns:http://www.w3.org/2003/01/geo/wgs84_pos#
-		tabtree ns:https://purl.org/tabtree/core#
-		ta ns:https://purl.org/tabtree/abstract#
+		tabtree ns:https://purl.org/prozion/tabtree/core#
+		ta ns:https://purl.org/prozion/tabtree/abstract#
 	classes +a:owl/Class +hi-inv-rel:subclass-of
 		GeographicalUnit
 			Country

@@ -1,0 +1,126 @@
+@prefix : <https://purl.org/prozion/tabtree/time#> .
+@prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix ta: <https://purl.org/prozion/tabtree/abstract#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+:closed
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :end .
+
+:created
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :start .
+
+:Date
+ rdf:type owl:Class ;
+ rdfs:subClassOf :TimePoint ;
+ tabtree:regexp (:\d{2}\.\d{2}\.\d{4}|current) .
+
+:date
+ rdf:type rdf:Property .
+
+:DateInterval
+ :types-combination (:TimePoint-TimePoint) ;
+ rdf:type owl:Class ;
+ rdfs:subClassOf time:ProperInterval, :TimeInterval .
+
+:DateTime
+ rdf:type owl:Class ;
+ rdfs:subClassOf :TimePoint ;
+ tabtree:regexp (:\d{2}\.\d{2}\.\d{4}-\d{2}:\d{2}(:\d{2})?) .
+
+:Day
+ rdf:type owl:Class ;
+ rdfs:subClassOf :StandardTimeInterval .
+
+:dur
+ rdfs:domain :TimelineObject ;
+ rdfs:comment "duration of some event" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Duration, :TimeInterval .
+
+:Duration
+ rdf:type owl:Class ;
+ rdfs:subClassOf time:TemporalDuration ;
+ tabtree:regexp (:\d+[SHMdwmy]) .
+
+:end
+ rdfs:subPropertyOf :date ;
+ rdfs:domain :TimelineObject ;
+ rdfs:comment "end date or time or datetime for some event" ;
+ rdf:type rdf:Property ;
+ rdfs:range :TimePoint .
+
+:Event
+ rdf:type owl:Class ;
+ rdfs:subClassOf ta:Datable .
+
+:Hour
+ rdf:type owl:Class ;
+ rdfs:subClassOf :StandardTimeInterval .
+
+:Month
+ rdf:type owl:Class ;
+ rdfs:subClassOf :StandardTimeInterval .
+
+:NamedTimeInterval
+ rdf:type owl:Class ;
+ rdfs:subClassOf :TimeInterval .
+
+:RegularTimeInterval
+ rdfs:subClassOf :TimeInterval ;
+ rdfs:comment "Time interval within every standard time interval" ;
+ rdf:type owl:Class .
+
+:StandardTimeInterval
+ rdf:type owl:Class ;
+ rdfs:subClassOf :TimeInterval .
+
+:start
+ rdfs:subPropertyOf :date ;
+ rdfs:domain :TimelineObject ;
+ rdfs:comment "start date or time or datetime for some event" ;
+ rdf:type rdf:Property ;
+ rdfs:range :TimePoint .
+
+<https://purl.org/prozion/tabtree/time#>
+ rdf:type owl:Ontology ;
+ dc:title "Ontology for time-related concepts" ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <https://purl.org/prozion/tabtree/abstract#>, <https://purl.org/prozion/tabtree/core#> .
+
+:Time
+ rdf:type owl:Class ;
+ rdfs:subClassOf time:TimeInterval .
+
+:time-interval
+ rdfs:domain :TimelineObject ;
+ rdf:type rdf:Property ;
+ rdfs:range :TimeInterval .
+
+:TimeInterval
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal, :Time .
+
+:TimelineObject
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Thing .
+
+:TimePoint
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Time .
+
+:year
+ rdfs:subPropertyOf :date ;
+ rdfs:domain ta:Datable ;
+ rdf:type rdf:Property ;
+ rdfs:range :Year .
+
+:Year
+ rdf:type owl:Class ;
+ rdfs:subClassOf :DateInterval, :Date, :StandardTimeInterval ;
+ tabtree:regexp (:\d{4}|current) .
+

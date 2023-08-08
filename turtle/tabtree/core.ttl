@@ -1,0 +1,329 @@
+@prefix : <https://purl.org/prozion/tabtree/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ta: <https://purl.org/prozion/tabtree/abstract#> .
+@prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <https://www.w3.org/2000/01/rdf-schema> .
+@prefix owl: <https://www.w3.org/2002/07/owl> .
+
+
+:abbr
+ rdfs:domain rdfs:Resource ;
+ rdf:type rdf:Property ;
+ rdfs:range (:Id :String) .
+
+:Boolean
+ rdf:type owl:Class ;
+ rdfs:subClassOf :primitive-datatype ;
+ :regexp (:t|f) .
+
+:Code
+ rdf:type owl:Class ;
+ rdfs:subClassOf :primitive-datatype .
+
+:Comment
+ rdf:type owl:Class ;
+ rdfs:subClassOf :String, :primitive-datatype ;
+ :regexp (".*?"(@(author):.*?)?) .
+
+:complex-datatype
+ rdf:type owl:Class .
+
+:deabbr
+ rdfs:domain ta:Abbreviation ;
+ rdfs:comment "Abbreviation meaning" ;
+ rdf:type rdf:Property ;
+ rdfs:range :String .
+
+:Dirpath
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal, :File .
+
+:element-class
+ rdfs:domain :List ;
+ rdfs:comment "Defines types of elements in the list" ;
+ rdf:type rdf:Property ;
+ rdfs:range :List .
+
+:example
+ rdfs:subPropertyOf skos:example ;
+ rdfs:domain owl:Class ;
+ rdfs:comment "Example of possible values for properties or classes, comma separates several instances of value, not several examples" ;
+ rdf:type rdf:Property ;
+ rdfs:range :String .
+
+:ExpandableProperty
+ rdfs:subClassOf :complex-datatype ;
+ :subroperty-of rdf:Property ;
+ rdfs:comment "Denotes property that requires some extra script actions in the process of translation from Baelas to Turtle OWL" ;
+ rdf:type owl:Class .
+
+:Explanation
+ rdfs:subClassOf :complex-datatype ;
+ rdfs:comment "A statement that explains RDF triplets as expressions" ;
+ rdf:type owl:Class .
+
+:file
+ rdfs:domain :Namespace ;
+ rdfs:comment "A file with schema description" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Filepath .
+
+:File
+ rdf:type owl:Class ;
+ rdfs:subClassOf :primitive-datatype .
+
+:Filepath
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal, :File .
+
+:Float
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal, :primitive-datatype ;
+ :regexp (:-?\d+\.\d*([Ee]-?\d+)) .
+
+:Id
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal, :primitive-datatype ;
+ :regexp ([A-Za-zА-Яа-я\-_:0-9]+) .
+
+:Integer
+ rdfs:subClassOf :IntegerInterval ;
+ :regexp (:(-|+)?\d+([Ee]\d+)?) ;
+ rdfs:comment "single value is a subclass of interval, it is interpreted as the left and rigth border of interval are the same" ;
+ rdf:type owl:Class .
+
+:IntegerInterval
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal, :primitive-datatype .
+
+:IntegerMaybe
+ rdf:type owl:Class ;
+ rdfs:subClassOf :primitive-datatype ;
+ :one-of :Integer, "*" .
+
+:IntegerPositive
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal, :Integer ;
+ :regexp (:\d+([Ee]\d+)?) .
+
+:LanguageId
+ rdfs:subClassOf :complex-datatype ;
+ :one-of :ttl, :tree, :rdfxml, :owlxml ;
+ rdfs:comment "Format to encode an ontology" ;
+ rdf:type owl:Class .
+
+:LispCode
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Code ;
+ :regexp :``.*?`` .
+
+:LispFunctionName
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Code .
+
+:List
+ rdfs:subClassOf :primitive-datatype ;
+ rdfs:comment "Enumeration of some elements, including instances by their ids" ;
+ rdf:type owl:Class .
+
+:Literal
+ rdf:type owl:Class ;
+ rdfs:subClassOf :complex-datatype ;
+ :union-of :Integer, :Float, :String, :Year, :Date, :Url, :Filepath .
+
+:Namespace
+ rdf:type owl:Class .
+
+:no-prefix
+ rdfs:domain :Namespace ;
+ rdf:type rdf:Property ;
+ rdfs:range :URI .
+
+:ns
+ rdfs:domain (:(union-of Namespace Ontology)) ;
+ rdf:type rdf:Property ;
+ rdfs:range :URI .
+
+:Number
+ rdf:type owl:Class ;
+ rdfs:subClassOf (:Float :Integer), :primitive-datatype .
+
+:one-of
+ rdf:type rdf:Property ;
+ owl:equivalentProperty owl:oneOf .
+
+:OntologyPart
+ rdf:type owl:Class .
+
+:ParametersList
+ rdfs:subClassOf :List ;
+ :element-class :TabtreeObjectParameter ;
+ rdfs:comment "Enumeration of object parameters" ;
+ rdf:type owl:Class .
+
+:prefix
+ rdfs:domain :Namespace ;
+ rdfs:comment "Applied when desired prefix is different from that in id" ;
+ rdf:type rdf:Property ;
+ rdfs:range :String, :`(one-of .
+
+:primitive-datatype
+ rdf:type :skip .
+
+:question
+ rdfs:subPropertyOf skos:note ;
+ rdfs:domain rdfs:Resource ;
+ rdfs:comment "questions and discussion about the subject" ;
+ rdf:type rdf:Property ;
+ rdfs:range :String .
+
+:RangeExpression
+ rdf:type owl:Class ;
+ rdfs:subClassOf :List ;
+ :element-class owl:Class, :LispCode .
+
+:Ref
+ rdf:type owl:Class ;
+ rdfs:subClassOf :complex-datatype ;
+ :union-of :Id, :URI, :IRI .
+
+:ref
+ rdfs:domain rdfs:Resource ;
+ rdfs:comment "Points to the external source where the entity is described or detalized" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Ref .
+
+:Regexp
+ rdf:type owl:Class ;
+ rdfs:subClassOf :primitive-datatype ;
+ :regexp :``.*?`` .
+
+:regexp
+ rdfs:domain rdfs:Datatype ;
+ rdfs:comment "A regular expression that defines a range of possible symbols and their combinations for scalar datatypes" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Regexp .
+
+:rel
+ rdfs:domain rdfs:Resource ;
+ rdfs:comment "Establishes relation between Object and Subject" ;
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Resource .
+
+:rem
+ rdf:type rdf:Property ;
+ owl:equivalentProperty skos:editorialNote .
+
+:section-hierarchy-inverse-relation
+ rdfs:domain :TabtreeSection ;
+ rdfs:comment "Defines relations between elements in subsequent hierarchy bottom up" ;
+ rdf:type rdf:Property ;
+ rdfs:range rdf:Property .
+
+:section-hierarchy-relation
+ rdfs:domain :TabtreeSection ;
+ rdfs:comment "Defines relations between elements in subsequent hierarchy that follows current section in .tree file. Relation goes from one element (subject) to another element (object), that is always exactly one level up in hierarchy" ;
+ rdf:type rdf:Property ;
+ rdfs:range rdf:Property .
+
+:section-root-class
+ rdfs:domain :TabtreeSection ;
+ rdfs:comment "Defines the common superclass for all the classes declared in the section" ;
+ rdf:type rdf:Property ;
+ rdfs:range owl:Class .
+
+:see-also
+ rdf:type rdf:Property ;
+ owl:equivalentProperty rdfs:seeAlso .
+
+:short-id
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf owl:sameAs .
+
+:skip
+ rdfs:comment "For rubrics in the code" ;
+ rdf:type owl:Class .
+
+:spec
+ rdfs:domain :Namespace ;
+ rdf:type rdf:Property ;
+ rdfs:range :Filepath .
+
+:status
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Literal .
+
+:String
+ rdf:type owl:Class ;
+ rdfs:subClassOf :primitive-datatype ;
+ owl:equivalentClass xsd:string ;
+ :regexp (:".*?"(ru|en)?) .
+
+:syntax
+ rdf:type rdf:Property ;
+ rdfs:domain :OntologyPart .
+
+<https://purl.org/prozion/tabtree/core#>
+ rdf:type owl:Ontology ;
+ dc:title :"Онтология ;
+ owl:imports <http://www.w3.org/2001/XMLSchema#>, <https://www.w3.org/1999/02/22-rdf-syntax-ns>, <https://www.w3.org/2000/01/rdf-schema>, <https://www.w3.org/2002/07/owl>, <http://purl.org/dc/terms/>, <http://www.w3.org/2004/02/skos/core#>, <https://purl.org/prozion/tabtree/abstract#> .
+
+:TabtreeLeaf
+ rdfs:subClassOf :TabtreeObject ;
+ rdfs:comment "Describes an object without other objects under it in the hierarchy (followed right after it and tabbed by one tab more)" ;
+ rdf:type owl:Class .
+
+:TabtreeObject
+ rdfs:subClassOf :TabtreeRecord ;
+ rdfs:comment "Describes an object in the .tree file" ;
+ rdf:type owl:Class .
+
+:TabtreeObjectParameter
+ rdfs:comment "Parameters of the objects in .tree file, writen in the form <parameter>:<value>" ;
+ rdf:type owl:Class .
+
+:TabtreeRecord
+ rdfs:comment "Any line, that represents either section or an object in the .tree file" ;
+ rdf:type owl:Class .
+
+:TabtreeSection
+ rdfs:subClassOf :TabtreeRecord ;
+ rdfs:comment "Describes a section in the .tree file" ;
+ rdf:type owl:Class .
+
+:to-authentic-format
+ rdfs:domain rdf:Property ;
+ rdfs:comment "Specifies the translation from the used property value to the format required by external standards and taxonomies, like SBO, GO etc." ;
+ rdf:type rdf:Property ;
+ rdfs:range :LispCode .
+
+:translate-to
+ rdfs:domain :TabtreeSection ;
+ rdfs:comment "A directive, that specifies to what format the current ontology code should be translated to" ;
+ rdf:type rdf:Property ;
+ rdfs:range :LanguageId .
+
+:types-combination
+ rdfs:domain rdfs:Datatype ;
+ rdf:type rdf:Property, owl:FunctionalProperty ;
+ rdfs:range :LispCode .
+
+:union-of
+ rdf:type rdf:Property ;
+ owl:equivalentProperty owl:unionOf .
+
+:unit
+ rdf:type rdf:Property ;
+ rdfs:range :UnitOfMeasurement .
+
+:UnitOfMeasurement
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal .
+
+:Url
+ rdf:type owl:Class ;
+ rdfs:subClassOf :File ;
+ :regexp (:.+?\.(ru|su|рф|com|net|org|biz|info|cc|ws|in|tv|mobi|club|name|me|pro|no|fi|ee|lv|lt|by|ua|tk|kz|jp|us|se|de|fr|uk|gov|edu|mil)) .
+

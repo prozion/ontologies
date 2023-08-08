@@ -1,11 +1,11 @@
-ontolib a:owl/Ontology title:"Ontology and data for ontologies repository" ns:https://purl.org/tabtree/ontolib#
+ontolib a:owl/Ontology title:"Ontology and data for ontologies repository" ns:https://purl.org/prozion/tabtree/ontolib#
 	namespaces
 		rdf ns:https://www.w3.org/1999/02/22-rdf-syntax-ns
 		rdfs ns:https://www.w3.org/2000/01/rdf-schema 
 		owl ns:https://www.w3.org/2002/07/owl 
 		dc ns:http://purl.org/dc/terms/ 
-		tabtree ns:https://purl.org/tabtree/core# no-prefix:<t>
-		ttc ns:https://purl.org/tabtree/contacts# 
+		tabtree ns:https://purl.org/prozion/tabtree/core# no-prefix:<t>
+		ttc ns:https://purl.org/prozion/tabtree/contacts# 
 	classes +a:owl/Class +hi-inv-rel:subclass-of
 		Prefix
 			Ontology subclass-of:owl/Ontology

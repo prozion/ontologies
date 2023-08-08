@@ -1,12 +1,12 @@
-tabtree-abstract a:owl/Ontology dc/title:"Ontology for some wi(l)dely-used abstraction" ns:https://purl.org/tabtree/abstract#
+tabtree-abstract a:owl/Ontology dc/title:"Ontology for some wi(l)dely-used abstraction" ns:https://purl.org/prozion/tabtree/abstract#
 	namespaces
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
 		; time ns:http://www.w3.org/2006/time#
-		ta ns:https://purl.org/tabtree/abstract#
-		tabtree ns:https://purl.org/tabtree/core#
+		ta ns:https://purl.org/prozion/tabtree/abstract#
+		tabtree ns:https://purl.org/prozion/tabtree/core#
 	classes +a:owl/Class +hi-inv-rel:subclass-of
 		owl/Thing
 			Abbreviation

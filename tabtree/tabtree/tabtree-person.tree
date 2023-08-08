@@ -1,15 +1,15 @@
-tabtree-person a:owl/Ontology dc/title:"Ways to describe a person" ns:https://purl.org/tabtree/person#
+tabtree-person a:owl/Ontology dc/title:"Ways to describe a person" ns:https://purl.org/prozion/tabtree/person#
 	namespaces
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
 		foaf ns:http://xmlns.com/foaf/0.1/
-		tabtree ns:https://purl.org/tabtree/core#
-		ta ns:https://purl.org/tabtree/abstract#
-		time ns:https://purl.org/tabtree/time#
-		loc ns:https://purl.org/tabtree/location#
-		org ns:https://purl.org/tabtree/organization#
+		tabtree ns:https://purl.org/prozion/tabtree/core#
+		ta ns:https://purl.org/prozion/tabtree/abstract#
+		time ns:https://purl.org/prozion/tabtree/time#
+		loc ns:https://purl.org/prozion/tabtree/location#
+		org ns:https://purl.org/prozion/tabtree/organization#
 	classes +a:owl/Class +hi-inv-rel:subclass-of
 		Homepage subclass-of:tabtree/Url
 			WorkplaceHomepage

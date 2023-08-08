@@ -1,0 +1,120 @@
+@prefix : <https://purl.org/prozion/tabtree/abstract#> .
+@prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix ta: <https://purl.org/prozion/tabtree/abstract#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+:Abbreviation
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Thing .
+
+:Agent
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Locatable, owl:Thing .
+
+:Attributable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+:Contactable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+:Countable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+:Datable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+:former-id
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :id .
+
+:Group
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Structurable, owl:Thing .
+
+:Human
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Agent .
+
+:HumbleAbstraction
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Thing .
+
+:id
+ rdfs:domain owl:Thing ;
+ rdf:type rdf:Property ;
+ rdfs:range tabtree:Id .
+
+:Linkable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+:Locatable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+:Measurable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+:metrics
+ rdf:type rdf:Property ;
+ rdfs:domain rdfs:Literal .
+
+:name
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf rdfs:label ;
+ rdfs:domain :Nameable .
+
+:Nameable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+:norm
+ rdfs:subPropertyOf :metrics ;
+ rdfs:comment "a scalar value, that characterizes some object" ;
+ rdf:type rdf:Property .
+
+:old
+ rdf:type rdf:Property .
+
+:old-id
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :old .
+
+owl:Thing
+ rdf:type owl:Class .
+
+:part-of
+ rdfs:subPropertyOf dc:isPartOf ;
+ rdf:type rdf:Property ;
+ rdfs:range :Structurable .
+
+:Product
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Thing .
+
+:Project
+ rdf:type owl:Class ;
+ rdfs:subClassOf owl:Thing .
+
+:ShortName
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Abbreviation .
+
+:Structurable
+ rdf:type owl:Class ;
+ rdfs:subClassOf :HumbleAbstraction .
+
+<https://purl.org/prozion/tabtree/abstract#>
+ rdf:type owl:Ontology ;
+ dc:title "Ontology for some wi(l)dely-used abstraction" ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <https://purl.org/prozion/tabtree/abstract#>, <https://purl.org/prozion/tabtree/core#> .
+

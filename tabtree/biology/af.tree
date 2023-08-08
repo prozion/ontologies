@@ -5,7 +5,7 @@ sbgn-af a:owl/Ontology dc/title:"The ontology corresponds to SBGN Activity Flow 
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
 		biopax ns:http://www.biopax.org/release/biopax-level3.owl#
-		tabtree ns:https://purl.org/tabtree/core#
+		tabtree ns:https://purl.org/prozion/tabtree/core#
 	classes +a:owl/Class +hi-inv-rel:subclass-of
 		ActivityNode
 			BiologicalActivity

@@ -1,0 +1,24 @@
+@prefix : <https://purl.org/prozion/tabtree/metrics#> .
+@prefix time: <https://purl.org/prozion/tabtree/time#> .
+@prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ta: <https://purl.org/prozion/tabtree/abstract#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+:cost
+ rdf:type rdf:Property ;
+ rdfs:range :Money .
+
+:Money
+ rdf:type owl:Class .
+
+<https://purl.org/prozion/tabtree/metrics#>
+ rdf:type owl:Ontology ;
+ dc:title "Ontology for various wide-spreaded metrics" ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <http://xmlns.com/foaf/0.1/>, <http://purl.org/ontology/bibo/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/abstract#>, <https://purl.org/prozion/tabtree/time#> .
+

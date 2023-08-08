@@ -1,13 +1,13 @@
-tabtree-organization a:owl/Ontology dc/title:"Ontology to describe organizations" ns:https://purl.org/tabtree/organization#
+tabtree-organization a:owl/Ontology dc/title:"Ontology to describe organizations" ns:https://purl.org/prozion/tabtree/organization#
 	namespaces
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
-		tabtree ns:https://purl.org/tabtree/core#
-		ta ns:https://purl.org/tabtree/abstract#
-		pers ns:https://purl.org/tabtree/person#
-		loc ns:https://purl.org/tabtree/location#
+		tabtree ns:https://purl.org/prozion/tabtree/core#
+		ta ns:https://purl.org/prozion/tabtree/abstract#
+		pers ns:https://purl.org/prozion/tabtree/person#
+		loc ns:https://purl.org/prozion/tabtree/location#
 	classes +a:owl/Class +hi-inv-rel:subclass-of
 		ta/Group
 			GroupOfPeople
@@ -28,6 +28,7 @@ tabtree-organization a:owl/Ontology dc/title:"Ontology to describe organizations
 		founder domain:Organization range:pers/Person
 		from domain:Organization range:Organization
 		merged-with domain:rdf/Statement range:Organization
+		merged-to domain:rdf/Statement range:Organization
 		office domain:Organization range:loc/Place
 			hq d:"headquarters location of some company or organization"
 				current-hq

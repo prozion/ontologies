@@ -1,0 +1,294 @@
+@prefix : <https://purl.org/prozion/tabtree/media#> .
+@prefix time: <https://purl.org/prozion/tabtree/time#> .
+@prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ta: <https://purl.org/prozion/tabtree/abstract#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+:Article
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Publication .
+
+:Author
+ rdf:type owl:Class ;
+ rdfs:subClassOf foaf:Person .
+
+:author
+ rdfs:domain :CreativePiece ;
+ rdf:type rdf:Property ;
+ rdfs:range :Author .
+
+:Blog
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Url, :Media .
+
+:Book
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Publication .
+
+:book
+ rdfs:domain :Person ;
+ rdf:type rdf:Property ;
+ rdfs:range :Book .
+
+:Channel
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNGroup .
+
+:Chart
+ rdf:type owl:Class ;
+ rdfs:subClassOf :DataVisualization .
+
+:Chat
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNGroup .
+
+:CreativePiece
+ rdf:type owl:Class ;
+ rdfs:subClassOf ta:Attributable, ta:Product .
+
+:DataVisualization
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Graphics .
+
+:DiscordChat
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Chat .
+
+:doi
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf bibo:doi .
+
+:Drawing
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Picture .
+
+:Dzen
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Blog .
+
+:f
+ rdfs:subPropertyOf :users-number ;
+ rdfs:domain :PersonalAccount ;
+ rdfs:comment "number of friends" ;
+ rdf:type rdf:Property .
+
+:Facebook
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Blog .
+
+:Graphics
+ rdf:type owl:Class ;
+ rdfs:subClassOf :CreativePiece .
+
+:Instagram
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Blog .
+
+:IRCChannel
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Channel .
+
+:IRI
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal .
+
+:issue
+ rdfs:domain :Publication ;
+ rdf:type rdf:Property ;
+ rdfs:range :JournalIssue .
+
+:issuedBy
+ rdf:type rdf:Property, owl:ObjectProperty ;
+ owl:inverseOf dc:publisher .
+
+:journal
+ rdfs:domain :Publication ;
+ rdf:type rdf:Property ;
+ rdfs:range :Journalr .
+
+:Journal
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Media .
+
+:JournalIssue
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Article .
+
+:Livejournal
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Blog .
+
+:Map
+ rdf:type owl:Class ;
+ rdfs:subClassOf :DataVisualization .
+
+:Media
+ rdf:type owl:Class ;
+ :subclas-of owl:Thing .
+
+:MessengerChat
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Chat .
+
+:Newspaper
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Media .
+
+:NewspaperIssue
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Article .
+
+:p
+ rdfs:subPropertyOf :users-number ;
+ rdfs:domain :SNEvent ;
+ rdfs:comment "number of participants in the event" ;
+ rdf:type rdf:Property .
+
+:PersonalAccount
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNResource .
+
+:Picture
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Graphics .
+
+:PrintedJournal
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Journal .
+
+:PrintedNewspaper
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Newspaper .
+
+:Publication
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Text .
+
+:SlackChat
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Chat .
+
+:sn_norm
+ rdfs:subPropertyOf ta:norm ;
+ rdfs:domain :SNResource ;
+ rdfs:comment "a norm for social networks" ;
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Literal .
+
+:SNEvent
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNResource .
+
+:SNGroup
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNResource .
+
+:SNResource
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Media .
+
+<https://purl.org/prozion/tabtree/media#>
+ rdf:type owl:Ontology ;
+ dc:title "Ontology for media outlets and publications, including the scientific ones" ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <http://xmlns.com/foaf/0.1/>, <http://purl.org/ontology/bibo/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/abstract#>, <https://purl.org/prozion/tabtree/time#> .
+
+:TelegramChannel
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Channel .
+
+:TelegramChat
+ rdf:type owl:Class ;
+ rdfs:subClassOf :MessengerChat .
+
+:Text
+ rdf:type owl:Class ;
+ rdfs:subClassOf :CreativePiece .
+
+:title
+ rdfs:subPropertyOf dc:title ;
+ rdfs:domain :CreativePiece ;
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Literal .
+
+:Twitter
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Blog .
+
+:u
+ rdfs:subPropertyOf :users-number ;
+ rdfs:domain :SNGroup ;
+ rdfs:comment "number of users in the group" ;
+ rdf:type rdf:Property .
+
+:URI
+ rdf:type owl:Class ;
+ rdfs:subClassOf :IRI .
+
+:url
+ rdfs:domain ta:Linkable ;
+ rdf:type rdf:Property ;
+ rdfs:range :Url .
+
+:Url
+ rdf:type owl:Class ;
+ rdfs:subClassOf :URI .
+
+:users-number
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :sn_norm .
+
+:vk
+ rdfs:subPropertyOf :url ;
+ rdf:type rdf:Property ;
+ rdfs:range :Vkontakte .
+
+:vk-old
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :vk .
+
+:vk-u
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :u ;
+ rdfs:domain :VKGroup .
+
+:VKGroup
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNGroup .
+
+:Vkontakte
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Blog .
+
+:VKPublic
+ rdf:type owl:Class ;
+ rdfs:subClassOf :VKGroup .
+
+:written
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf time:created ;
+ rdfs:domain :Text .
+
+:Youtube
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Blog .
+
+:YoutubeChannel
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Channel .
+
+:yt
+ rdfs:subPropertyOf :url ;
+ rdf:type rdf:Property ;
+ rdfs:range :Youtube .
+
+:yt-u
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :u ;
+ rdfs:domain :YoutubeChannel .
+

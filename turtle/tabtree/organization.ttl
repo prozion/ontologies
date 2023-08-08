@@ -1,0 +1,144 @@
+@prefix : <https://purl.org/prozion/tabtree/organization#> .
+@prefix pers: <https://purl.org/prozion/tabtree/person#> .
+@prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix ta: <https://purl.org/prozion/tabtree/abstract#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix loc: <https://purl.org/prozion/tabtree/location#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+:BusinessUnit
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:Club
+ rdf:type owl:Class ;
+ rdfs:subClassOf :OrganizedGroup .
+
+:company
+ rdfs:subPropertyOf :org ;
+ rdf:type rdf:Property ;
+ rdfs:range :Company .
+
+:Company
+ rdf:type owl:Class ;
+ rdfs:subClassOf :BusinessUnit .
+
+:current-hq
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :hq .
+
+:EducationalOrganization
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:former-hq
+ rdf:type rdf:Property ;
+ rdfs:subPropertyOf :hq .
+
+:founded-by
+ rdfs:domain rdf:Statement ;
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
+
+:founder
+ rdfs:domain :Organization ;
+ rdf:type rdf:Property ;
+ rdfs:range pers:Person .
+
+:from
+ rdfs:domain :Organization ;
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
+
+:GovernmentUnit
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:GroupOfPeople
+ rdf:type owl:Class ;
+ rdfs:subClassOf ta:Group .
+
+:hq
+ rdfs:subPropertyOf :office ;
+ rdfs:comment "headquarters location of some company or organization" ;
+ rdf:type rdf:Property .
+
+:institute
+ rdfs:subPropertyOf :org ;
+ rdf:type rdf:Property ;
+ rdfs:range :Institute .
+
+:Institute
+ rdf:type owl:Class ;
+ rdfs:subClassOf :ResearchOrganization .
+
+:merged-to
+ rdfs:domain rdf:Statement ;
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
+
+:merged-with
+ rdfs:domain rdf:Statement ;
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
+
+:office
+ rdfs:domain :Organization ;
+ rdf:type rdf:Property ;
+ rdfs:range loc:Place .
+
+:org
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
+
+:Organization
+ rdf:type owl:Class ;
+ rdfs:subClassOf ta:Locatable, ta:Structurable, ta:Contactable, ta:Nameable .
+
+:OrganizedGroup
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:PoliticalOrganization
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+:PoliticalParty
+ rdf:type owl:Class ;
+ rdfs:subClassOf :PoliticalOrganization ;
+ owl:sameAs :Party .
+
+:renamed-to
+ rdfs:domain :Organization ;
+ rdf:type rdf:Property ;
+ rdfs:range :Organization .
+
+:research-center
+ rdfs:subPropertyOf :org ;
+ rdf:type rdf:Property ;
+ rdfs:range :ResearchCenter .
+
+:ResearchOrganization
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Organization .
+
+ta:Group
+ rdf:type owl:Class .
+
+<https://purl.org/prozion/tabtree/organization#>
+ rdf:type owl:Ontology ;
+ dc:title "Ontology to describe organizations" ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/abstract#>, <https://purl.org/prozion/tabtree/person#>, <https://purl.org/prozion/tabtree/location#> .
+
+:uni
+ rdfs:subPropertyOf :org ;
+ rdf:type rdf:Property ;
+ rdfs:range :University .
+
+:University
+ rdf:type owl:Class ;
+ rdfs:subClassOf :ResearchOrganization, :EducationalOrganization .
+

@@ -1,0 +1,75 @@
+@prefix : <https://purl.org/prozion/tabtree/location#> .
+@prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix ta: <https://purl.org/prozion/tabtree/abstract#> .
+
+
+:city
+ rdfs:subPropertyOf :place ;
+ rdf:type rdf:Property ;
+ rdfs:range :City .
+
+:City
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Place .
+
+:country
+ rdfs:subPropertyOf :location ;
+ rdf:type rdf:Property ;
+ rdfs:range :Country .
+
+:Country
+ rdf:type owl:Class ;
+ rdfs:subClassOf :GeographicalUnit .
+
+:GeographicalUnit
+ rdf:type owl:Class .
+
+:lat
+ rdfs:domain ta:Locatable ;
+ rdfs:comment "Latitude" ;
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Literal .
+
+:location
+ rdf:type rdf:Property ;
+ rdfs:domain ta:Locatable .
+
+:lon
+ rdfs:domain ta:Locatable ;
+ rdfs:comment "Longitude" ;
+ rdf:type rdf:Property ;
+ rdfs:range rdfs:Literal .
+
+:place
+ rdfs:subPropertyOf :location ;
+ rdfs:comment "the name of the place, city, village" ;
+ rdf:type rdf:Property ;
+ rdfs:range :String .
+
+:Place
+ rdf:type owl:Class ;
+ rdfs:subClassOf :GeographicalUnit .
+
+:SkiResort
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Place .
+
+<https://purl.org/prozion/tabtree/location#>
+ rdf:type owl:Ontology ;
+ dc:title "Ontology for location information" ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <http://www.w3.org/2003/01/geo/wgs84_pos#>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/abstract#> .
+
+:town
+ rdf:type rdf:Property ;
+ owl:equivalentProperty :city ;
+ rdfs:subPropertyOf :place .
+
+:Village
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Place .
+

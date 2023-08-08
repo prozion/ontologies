@@ -1,0 +1,33 @@
+@prefix : <https://purl.org/prozion/tabtree/source#> .
+@prefix time: <https://purl.org/prozion/tabtree/time#> .
+@prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <https://purl.org/prozion/tabtree/media#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix loc: <https://purl.org/prozion/tabtree/location#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+:source
+ rdfs:domain rdf:Statement ;
+ rdf:type rdf:Property ;
+ rdfs:range :Source .
+
+:Source
+ rdf:type owl:Class .
+
+<https://purl.org/prozion/tabtree/source#>
+ rdf:type owl:Ontology ;
+ dc:title "All about sources" ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <http://xmlns.com/foaf/0.1/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/time#>, <https://purl.org/prozion/tabtree/location#>, <https://purl.org/prozion/tabtree/media#> .
+
+:UrlSource
+ rdf:type owl:Class ;
+ rdfs:subClassOf media:Url, :WebpageSource .
+
+:WebpageSource
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Source .
+

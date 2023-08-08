@@ -1,4 +1,4 @@
-tabtree-media a:owl/Ontology dc/title:"Ontology for media outlets and publications, including the scientific ones" ns:https://purl.org/tabtree/media#
+tabtree-media a:owl/Ontology dc/title:"Ontology for media outlets and publications, including the scientific ones" ns:https://purl.org/prozion/tabtree/media#
 	namespaces
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
@@ -6,9 +6,9 @@ tabtree-media a:owl/Ontology dc/title:"Ontology for media outlets and publicatio
 		dc ns:http://purl.org/dc/elements/1.1/
 		foaf ns:http://xmlns.com/foaf/0.1/
 		bibo ns:http://purl.org/ontology/bibo/
-		tabtree ns:https://purl.org/tabtree/core#
-		ta ns:https://purl.org/tabtree/abstract#
-		time ns:https://purl.org/tabtree/time#
+		tabtree ns:https://purl.org/prozion/tabtree/core#
+		ta ns:https://purl.org/prozion/tabtree/abstract#
+		time ns:https://purl.org/prozion/tabtree/time#
 	classes +a:owl/Class +hi-inv-rel:subclass-of
 		Author subclass-of:foaf/Person
 		Media subclas-of:owl/Thing
