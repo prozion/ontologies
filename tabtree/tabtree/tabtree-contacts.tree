@@ -51,7 +51,6 @@ tabtree-contacts a:owl/Ontology dc/title:"Ontology for contact information" ns:h
 				org-url subproperty-of:url d:"link to organization's official web page"
 				org-vk d:"link to organization's page in VKontakte"
 				org-fb d:"link to organization's page in Facebook"
-				
 				contact domain:Contactable range:Contact
 					email range:Email
 					twitter range:Twitter
