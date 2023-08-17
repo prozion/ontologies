@@ -59,7 +59,6 @@ tabtree a:owl/Ontology dc/title:"Онтология Tabtree - древовидн
 		prefix domain:Namespace range:String,`(one-of <none>)` d:"Applied when desired prefix is different from that in id"
 		question subproperty-of:skos/note domain:rdfs/Resource range:String d:"questions and discussion about the subject"
 		regexp domain:rdfs/Datatype range:Regexp d:"A regular expression that defines a range of possible symbols and their combinations for scalar datatypes"
-		rem eq-property:skos/editorialNote
 		ref domain:rdfs/Resource range:Ref d:"Points to the external source where the entity is described or detalized"
 		rel domain:rdfs/Resource range:rdfs/Resource d:"Establishes relation between Object and Subject"
 		section-root-class domain:TabtreeSection range:owl/Class d:"Defines the common superclass for all the classes declared in the section"

@@ -4,7 +4,7 @@ tabtree-person a:owl/Ontology dc/title:"Ways to describe a person" ns:https://pu
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
-		foaf ns:http://xmlns.com/foaf/0.1/
+		; foaf ns:http://xmlns.com/foaf/0.1/
 		tabtree ns:https://purl.org/prozion/tabtree/core#
 		ta ns:https://purl.org/prozion/tabtree/abstract#
 		time ns:https://purl.org/prozion/tabtree/time#
@@ -14,7 +14,8 @@ tabtree-person a:owl/Ontology dc/title:"Ways to describe a person" ns:https://pu
 		Homepage subclass-of:tabtree/Url
 			WorkplaceHomepage
 			HobbyHomepage
-		Person subclass-of:foaf/Person,ta/Human,ta/Contactable,ta/Nameable
+		; Person subclass-of:foaf/Person,ta/Human,ta/Contactable,ta/Nameable
+		Person subclass-of:ta/Human,ta/Contactable,ta/Nameable
 		Profession
 	properties +a:rdf/Property +hi-inv-rel:subproperty-of
 		alma-mater domain:Person range:org/University
@@ -22,7 +23,7 @@ tabtree-person a:owl/Ontology dc/title:"Ways to describe a person" ns:https://pu
 			ba 
 			ma
 		homepage subproperty-of:tabtree/url domain:Person range:Homepage
-			foaf/workplaceHomepage range:WorkplaceHomepage
+			; foaf/workplaceHomepage range:WorkplaceHomepage
 		hometown domain:Person range:loc/City
 		member domain:`Person,org/Organization` range:org/Organization
 		name subclass-of:tabtree/name domain:Person range:rdfs/Literal

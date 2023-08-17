@@ -4,7 +4,6 @@ tabtree-source a:owl/Ontology dc/title:"All about sources" ns:https://purl.org/p
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		owl ns:http://www.w3.org/2002/07/owl#
 		dc ns:http://purl.org/dc/elements/1.1/
-		foaf ns:http://xmlns.com/foaf/0.1/
 		tabtree ns:https://purl.org/prozion/tabtree/core#
 		time ns:https://purl.org/prozion/tabtree/time#
 		loc ns:https://purl.org/prozion/tabtree/location#
