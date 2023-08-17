@@ -1,7 +1,6 @@
 @prefix : <https://purl.org/prozion/tabtree/media#> .
 @prefix time: <https://purl.org/prozion/tabtree/time#> .
 @prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ta: <https://purl.org/prozion/tabtree/abstract#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
@@ -16,7 +15,7 @@
 
 :Author
  rdf:type owl:Class ;
- rdfs:subClassOf foaf:Person .
+ rdfs:subClassOf ta:Human .
 
 :author
  rdfs:domain :CreativePiece ;
@@ -196,7 +195,7 @@
 <https://purl.org/prozion/tabtree/media#>
  rdf:type owl:Ontology ;
  dc:title "Ontology for media outlets and publications, including the scientific ones" ;
- owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <http://xmlns.com/foaf/0.1/>, <http://purl.org/ontology/bibo/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/abstract#>, <https://purl.org/prozion/tabtree/time#> .
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <http://purl.org/ontology/bibo/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/abstract#>, <https://purl.org/prozion/tabtree/time#> .
 
 :TelegramChannel
  rdf:type owl:Class ;
