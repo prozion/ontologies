@@ -1,5 +1,6 @@
 @prefix : <https://purl.org/prozion/tabtree/contacts#> .
 @prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -161,7 +162,7 @@
 <https://purl.org/prozion/tabtree/contacts#>
  rdf:type owl:Ontology ;
  dc:title "Ontology for contact information" ;
- owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/web#> .
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <http://xmlns.com/foaf/0.1/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/web#> .
 
 :Telegram
  rdf:type owl:Class ;
