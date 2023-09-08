@@ -31,27 +31,19 @@ tabtree-contacts a:owl/Ontology dc/title:"Ontology for contact information" ns:h
 			phone subproperty-of:foaf/phone domain:owl/Thing range:String url:www.ietf.org/rfc/rfc2806.txt d:"a phone number"
 			url domain:owl/Thing range:web/Url d:"a general link to some web page"
 				email d:"email address" range:Email
-					gmail regexp:`.+?@gmail\.com` d:"useful distinct email for some applications as it usually correlates with google account and provides an easy registration in the system"
+					gmail d:"useful distinct email for some applications as it usually correlates with google account and provides an easy registration in the system"
 				sn d:"link to a page in some social network"
 					fb d:"link to Facebook page" range:Facebook
 					insta d:"link to Instagram page" range:Instagram
 					linkedin d:"link to LinkedIn page" range:LinkedIn
 					lj range:LiveJournal
-					ok d:"link to Odnoklassniki page" range:
-					strava d:"link to Strava page" range:
+					ok d:"link to Odnoklassniki page"
+					strava d:"link to Strava page"
 					twi range:Twitter
-					vk d:"link to VKontakte page" range:
+					vk d:"link to VKontakte page"
 				messenger d:"id in some messenger app"
 					skype range:Skype
 					signal range:Signal
 					tg d:"Telegram id" range:Telegram
 					whatsapp range:Whatsapp
 					viber range:Viber
-			org-contact d:"contacts for organization"
-				org-url subproperty-of:url d:"link to organization's official web page"
-				org-vk d:"link to organization's page in VKontakte"
-				org-fb d:"link to organization's page in Facebook"
-				contact domain:Contactable range:Contact
-					email range:Email
-					twitter range:Twitter
-					vk range:Vkontakte

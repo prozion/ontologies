@@ -9,17 +9,15 @@
 
 
 :contact
- rdfs:subPropertyOf :org-contact ;
- rdfs:domain foaf:Agent, :Contactable ;
  rdf:type rdf:Property ;
- rdfs:range :Contact .
+ rdfs:domain foaf:Agent .
 
 :Contact
  rdf:type owl:Class ;
  rdfs:subClassOf rdfs:Literal .
 
 :email
- rdfs:subPropertyOf :url, :contact ;
+ rdfs:subPropertyOf :url ;
  rdfs:comment "email address" ;
  rdf:type rdf:Property ;
  rdfs:range :Email .
@@ -40,7 +38,6 @@
 
 :gmail
  rdfs:subPropertyOf :email ;
- :regexp (:.+?@gmail\.com) ;
  rdfs:comment "useful distinct email for some applications as it usually correlates with google account and provides an easy registration in the system" ;
  rdf:type rdf:Property .
 
@@ -89,26 +86,6 @@
 :ok
  rdfs:subPropertyOf :sn ;
  rdfs:comment "link to Odnoklassniki page" ;
- rdf:type rdf:Property .
-
-:org-contact
- rdfs:subPropertyOf :contact ;
- rdfs:comment "contacts for organization" ;
- rdf:type rdf:Property .
-
-:org-fb
- rdfs:subPropertyOf :org-contact ;
- rdfs:comment "link to organization's page in Facebook" ;
- rdf:type rdf:Property .
-
-:org-url
- rdfs:subPropertyOf :url, :org-contact ;
- rdfs:comment "link to organization's official web page" ;
- rdf:type rdf:Property .
-
-:org-vk
- rdfs:subPropertyOf :org-contact ;
- rdfs:comment "link to organization's page in VKontakte" ;
  rdf:type rdf:Property .
 
 :phone
@@ -179,11 +156,6 @@
  rdf:type rdf:Property ;
  rdfs:range :Twitter .
 
-:twitter
- rdfs:subPropertyOf :contact ;
- rdf:type rdf:Property ;
- rdfs:range :Twitter .
-
 :Twitter
  rdf:type owl:Class ;
  rdfs:subClassOf :SNAccount .
@@ -205,10 +177,9 @@
  rdfs:subClassOf :Messenger .
 
 :vk
- rdfs:subPropertyOf :sn, :contact ;
+ rdfs:subPropertyOf :sn ;
  rdfs:comment "link to VKontakte page" ;
- rdf:type rdf:Property ;
- rdfs:range :Vkontakte .
+ rdf:type rdf:Property .
 
 :Vkontakte
  rdf:type owl:Class ;
