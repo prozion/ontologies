@@ -1,0 +1,224 @@
+@prefix : <https://purl.org/prozion/tabtree/contacts#> .
+@prefix tabtree: <https://purl.org/prozion/tabtree/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix web: <https://purl.org/prozion/tabtree/web#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+:contact
+ rdfs:subPropertyOf :org-contact ;
+ rdfs:domain foaf:Agent, :Contactable ;
+ rdf:type rdf:Property ;
+ rdfs:range :Contact .
+
+:Contact
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal .
+
+:email
+ rdfs:subPropertyOf :url, :contact ;
+ rdfs:comment "email address" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Email .
+
+:Email
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Contact .
+
+:Facebook
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNAccount .
+
+:fb
+ rdfs:subPropertyOf :sn ;
+ rdfs:comment "link to Facebook page" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Facebook .
+
+:gmail
+ rdfs:subPropertyOf :email ;
+ :regexp (:.+?@gmail\.com) ;
+ rdfs:comment "useful distinct email for some applications as it usually correlates with google account and provides an easy registration in the system" ;
+ rdf:type rdf:Property .
+
+:insta
+ rdfs:subPropertyOf :sn ;
+ rdfs:comment "link to Instagram page" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Instagram .
+
+:Instagram
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNAccount .
+
+:LinkedIn
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNAccount .
+
+:linkedin
+ rdfs:subPropertyOf :sn ;
+ rdfs:comment "link to LinkedIn page" ;
+ rdf:type rdf:Property ;
+ rdfs:range :LinkedIn .
+
+:LiveJournal
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNAccount .
+
+:lj
+ rdfs:subPropertyOf :sn ;
+ rdf:type rdf:Property ;
+ rdfs:range :LiveJournal .
+
+:Messenger
+ rdf:type owl:Class ;
+ rdfs:subClassOf rdfs:Literal .
+
+:messenger
+ rdfs:subPropertyOf :url ;
+ rdfs:comment "id in some messenger app" ;
+ rdf:type rdf:Property .
+
+:Odnoklassniki
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNAccount .
+
+:ok
+ rdfs:subPropertyOf :sn ;
+ rdfs:comment "link to Odnoklassniki page" ;
+ rdf:type rdf:Property .
+
+:org-contact
+ rdfs:subPropertyOf :contact ;
+ rdfs:comment "contacts for organization" ;
+ rdf:type rdf:Property .
+
+:org-fb
+ rdfs:subPropertyOf :org-contact ;
+ rdfs:comment "link to organization's page in Facebook" ;
+ rdf:type rdf:Property .
+
+:org-url
+ rdfs:subPropertyOf :url, :org-contact ;
+ rdfs:comment "link to organization's official web page" ;
+ rdf:type rdf:Property .
+
+:org-vk
+ rdfs:subPropertyOf :org-contact ;
+ rdfs:comment "link to organization's page in VKontakte" ;
+ rdf:type rdf:Property .
+
+:phone
+ :url <www.ietf.org/rfc/rfc2806.txt> ;
+ rdfs:subPropertyOf foaf:phone, :contact ;
+ rdfs:domain owl:Thing ;
+ rdfs:comment "a phone number" ;
+ rdf:type rdf:Property ;
+ rdfs:range :String .
+
+:Phone
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Contact .
+
+:Signal
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Messenger .
+
+:signal
+ rdfs:subPropertyOf :messenger ;
+ rdf:type rdf:Property ;
+ rdfs:range :Signal .
+
+:skype
+ rdfs:subPropertyOf :messenger ;
+ rdf:type rdf:Property ;
+ rdfs:range :Skype .
+
+:Skype
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Messenger .
+
+:sn
+ rdfs:subPropertyOf :url ;
+ rdfs:comment "link to a page in some social network" ;
+ rdf:type rdf:Property .
+
+:SNAccount
+ rdf:type owl:Class ;
+ rdfs:subClassOf tabtree:Url, :Contact .
+
+:strava
+ rdfs:subPropertyOf :sn ;
+ rdfs:comment "link to Strava page" ;
+ rdf:type rdf:Property .
+
+:Strava
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNAccount .
+
+<https://purl.org/prozion/tabtree/contacts#>
+ rdf:type owl:Ontology ;
+ dc:title "Ontology for contact information" ;
+ owl:imports <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://purl.org/dc/elements/1.1/>, <https://purl.org/prozion/tabtree/core#>, <https://purl.org/prozion/tabtree/web#> .
+
+:Telegram
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Messenger .
+
+:tg
+ rdfs:subPropertyOf :messenger ;
+ rdfs:comment "Telegram id" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Telegram .
+
+:twi
+ rdfs:subPropertyOf :sn ;
+ rdf:type rdf:Property ;
+ rdfs:range :Twitter .
+
+:twitter
+ rdfs:subPropertyOf :contact ;
+ rdf:type rdf:Property ;
+ rdfs:range :Twitter .
+
+:Twitter
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNAccount .
+
+:url
+ rdfs:subPropertyOf :contact ;
+ rdfs:domain owl:Thing ;
+ rdfs:comment "a general link to some web page" ;
+ rdf:type rdf:Property ;
+ rdfs:range web:Url .
+
+:viber
+ rdfs:subPropertyOf :messenger ;
+ rdf:type rdf:Property ;
+ rdfs:range :Viber .
+
+:Viber
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Messenger .
+
+:vk
+ rdfs:subPropertyOf :sn, :contact ;
+ rdfs:comment "link to VKontakte page" ;
+ rdf:type rdf:Property ;
+ rdfs:range :Vkontakte .
+
+:Vkontakte
+ rdf:type owl:Class ;
+ rdfs:subClassOf :SNAccount .
+
+:whatsapp
+ rdfs:subPropertyOf :messenger ;
+ rdf:type rdf:Property ;
+ rdfs:range :Whatsapp .
+
+:Whatsapp
+ rdf:type owl:Class ;
+ rdfs:subClassOf :Messenger .
+
