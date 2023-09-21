@@ -19,6 +19,9 @@ tabtree-person a:owl/Ontology dc/title:"Ways to describe a person" ns:https://pu
 		Profession
 	properties +a:rdf/Property +hi-inv-rel:subproperty-of
 		alma-mater domain:Person range:org/University
+		personal-date
+			bdate range:time/Date
+			ddate range:time/Date
 		degree domain:Person range:org/University
 			ba 
 			ma
@@ -32,7 +35,7 @@ tabtree-person a:owl/Ontology dc/title:"Ways to describe a person" ns:https://pu
 			real-surname
 		nick domain:Person range:rdfs/Literal
 		place subproperty-of:loc/place
-			bplace domain:Person range:time/Date d:"birthplace"
-			dplace domain:Person range:time/Date d:"place of death"
+			bplace domain:Person range:loc/Place d:"birthplace"
+			dplace domain:Person range:loc/Place d:"place of death"
 		profession domain:Person range:Profession
 

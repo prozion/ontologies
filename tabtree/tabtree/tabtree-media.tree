@@ -56,6 +56,7 @@ tabtree-media a:owl/Ontology dc/title:"Ontology for media outlets and publicatio
 		IRI subclass-of:rdfs/Literal
 			URI
 				Url
+		UrlCore d:"Url without prefixes like https://" subclass-of:rdfs/Literal
 	properties +a:rdf/Property +hi-inv-rel:subproperty-of
 		author domain:CreativePiece range:Author
 		book domain:Person range:Book

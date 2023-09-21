@@ -34,6 +34,7 @@ tabtree a:owl/Ontology dc/title:"Онтология Tabtree - древовидн
 			IntegerInterval subclass-of:rdfs/Literal
 				Integer regexp:`(-|+)?\d+([Ee]\d+)?` d:"single value is a subclass of interval, it is interpreted as the left and rigth border of interval are the same"
 					IntegerPositive regexp:`\d+([Ee]\d+)?` subclass-of:rdfs/Literal
+			IntegerAbbreviated d:"An integer probably with prefixes like K, M, G etc."
 			IntegerMaybe one-of:Integer,"*"
 			List d:"Enumeration of some elements, including instances by their ids"
 				ParametersList d:"Enumeration of object parameters" element-class:TabtreeObjectParameter
